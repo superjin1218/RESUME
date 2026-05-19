@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko" data-default-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="조진우 (Jinwoo Cho · Drakos) — CS-Backed Future Financier. Blockchain · Finance · Data researcher portfolio.">
+<title>DRAKOS — Jinwoo Cho · CS-Backed Future Financier</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23cc9166' text-anchor='middle'%3EJC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+/* ============================================================
+   SLASH — Midnight Ledger / Obsidian Surfaces  (design tokens)
+   verbatim from variables.css
+   ============================================================ */
+:root{
+  --color-midnight-ink:#000000;
+  --color-obsidian-surface:#030304;
+  --color-charcoal-canvas:#08080a;
+  --color-pewter-accent:#121317;
+  --color-slate-gray:#1c1d22;
+  --color-ash-text:#5e616e;
+  --color-stone-text:#777a88;
+  --color-silver-text:#acafb9;
+  --color-porcelain-text:#cdcdcd;
+  --color-white-frost:#e2e3e9;
+  --color-pure-white:#ffffff;
+  --color-golden-gradient:#cc9166;
+  --gradient-golden-gradient:linear-gradient(103deg, rgb(174,147,87), rgb(255,240,204) 40%, rgb(174,147,87) 70%, rgba(189,157,79,0));
+
+  --font-inter:'Inter','Pretendard',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --font-ivy-presto:'Playfair Display','Pretendard',Georgia,'Times New Roman',serif;
+
+  --text-caption:12px; --leading-caption:1.5; --tracking-caption:-0.007px;
+  --text-body-sm:14px; --leading-body-sm:1.43; --tracking-body-sm:-0.013px;
+  --text-body:16px; --leading-body:1.38; --tracking-body:-0.02px;
+  --text-subheading:20px; --leading-subheading:1.33; --tracking-subheading:-0.022px;
+  --text-heading:32px; --leading-heading:1.25; --tracking-heading:-0.025px;
+  --text-heading-lg:48px; --leading-heading-lg:1.13; --tracking-heading-lg:-0.04px;
+  --text-display:88px; --leading-display:1; --tracking-display:0.01px;
+
+  --font-weight-light:300; --font-weight-regular:400; --font-weight-medium:500;
+  --font-weight-semibold:600; --font-weight-bold:700;
+
+  --spacing-4:4px;--spacing-6:6px;--spacing-8:8px;--spacing-9:9px;--spacing-10:10px;
+  --spacing-12:12px;--spacing-14:14px;--spacing-16:16px;--spacing-20:20px;--spacing-22:22px;
+  --spacing-24:24px;--spacing-28:28px;--spacing-32:32px;--spacing-40:40px;
+  --spacing-105:105px;--spacing-224:224px;
+
+  --page-max-width:1216px;
+  --section-gap:160px;
+  --card-padding:32px;
+  --element-gap:6px;
+
+  --radius-sm:2px;--radius-lg:10px;--radius-full:9999px;
+  --radius-md:10px;--radius-none:0px;--radius-pill:9999px;
+
+  --surface-midnight-ink:#000000;
+  --surface-obsidian-surface:#030304;
+  --surface-charcoal-canvas:#08080a;
+  --surface-pewter-accent:#121317;
+  --surface-slate-gray:#1c1d22;
+
+  /* responsive bridges of the token scale */
+  --sec:clamp(88px,12vw,160px);
+  --pad:clamp(20px,4vw,32px);
+  --d-display:clamp(2.7rem,8.4vw,5.5rem);
+  --d-hlg:clamp(2rem,5vw,3rem);
+  --d-h:clamp(1.55rem,3.4vw,2rem);
+}
+
+/* ---------- reset / base ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--color-midnight-ink);
+  color:var(--color-white-frost);
+  font-family:var(--font-inter);
+  font-size:var(--text-body);line-height:var(--leading-body);
+  letter-spacing:var(--tracking-body);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  min-height:100vh;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul{list-style:none}
+::selection{background:rgba(204,145,102,.32);color:#fff}
+
+.serif{font-family:var(--font-ivy-presto);font-weight:400;letter-spacing:.01px}
+.wrap{max-width:var(--page-max-width);margin:0 auto;padding:0 var(--pad);width:100%}
+.eyebrow{
+  font-size:var(--text-caption);font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--color-stone-text);
+}
+.eyebrow .n{color:var(--color-golden-gradient)}
+.gold-text{
+  background:var(--gradient-golden-gradient);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% 100%;
+}
+
+/* ---------- atmosphere (all CSS/SVG, no image files) ---------- */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg .grid{
+  position:absolute;inset:-2px;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 22%,#000 30%,transparent 78%);
+          mask-image:radial-gradient(ellipse 70% 60% at 50% 22%,#000 30%,transparent 78%);
+}
+.bg .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;will-change:transform}
+.bg .b1{width:60vw;height:46vw;left:-12vw;top:-16vw;
+  background:radial-gradient(circle at 40% 40%,rgba(204,145,102,.16),rgba(174,147,87,.05) 55%,transparent 72%);
+  animation:drift1 26s ease-in-out infinite alternate}
+.bg .b2{width:52vw;height:40vw;right:-14vw;top:30vh;
+  background:radial-gradient(circle at 60% 50%,rgba(255,240,204,.07),rgba(204,145,102,.05) 50%,transparent 70%);
+  animation:drift2 32s ease-in-out infinite alternate}
+.bg .grain{position:absolute;inset:0;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes drift1{from{transform:translate3d(0,0,0)}to{transform:translate3d(5vw,4vh,0) scale(1.12)}}
+@keyframes drift2{from{transform:translate3d(0,0,0)}to{transform:translate3d(-4vw,-3vh,0) scale(1.1)}}
+
+/* ---------- skip link ---------- */
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:12px;z-index:120;background:var(--color-pure-white);
+  color:#000;padding:10px 18px;border-radius:var(--radius-full);font-weight:600}
+
+/* ============================================================
+   INTRO — two-beat boot sequence
+   ============================================================ */
+#intro{
+  position:fixed;inset:0;z-index:200;background:var(--color-midnight-ink);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:24px;transition:opacity .9s ease,transform 1.1s cubic-bezier(.7,0,.2,1);
+}
+#intro.done{opacity:0;transform:translateY(-32px);pointer-events:none}
+#intro .beat{position:absolute;opacity:0}
+#intro .beat.show{animation:beatIn 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+#intro .beat.out{animation:beatOut .55s ease forwards}
+@keyframes beatIn{
+  0%{opacity:0;transform:translateY(20px);filter:blur(8px)}
+  18%{opacity:1;filter:blur(0)}
+  82%{opacity:1;transform:translateY(0)}
+  100%{opacity:1;transform:translateY(-2px)}
+}
+@keyframes beatOut{to{opacity:0;transform:translateY(-22px);filter:blur(6px)}}
+#intro .kick{font-size:var(--text-caption);font-weight:600;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--color-stone-text);margin-bottom:18px}
+#intro .big{
+  font-family:var(--font-ivy-presto);font-weight:500;line-height:1.04;
+  font-size:clamp(2.1rem,7vw,4.6rem);letter-spacing:.01em;
+  background:linear-gradient(103deg,#ae9357,#fff0cc 38%,#cc9166 60%,#ae9357 85%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 3.4s linear infinite;
+}
+#intro .tag{font-style:italic}
+#intro .rule{height:1px;width:0;margin:26px auto 0;
+  background:linear-gradient(90deg,transparent,var(--color-golden-gradient),transparent)}
+#intro .beat.show .rule{animation:rule 1.3s .25s ease forwards}
+@keyframes rule{to{width:min(420px,72vw)}}
+@keyframes shimmer{to{background-position:220% 0}}
+#introSkip{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  background:none;border:0;color:var(--color-ash-text);font:inherit;
+  font-size:var(--text-caption);letter-spacing:.18em;text-transform:uppercase;
+  cursor:pointer;padding:10px 16px;transition:color .2s}
+#introSkip:hover{color:var(--color-silver-text)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav{position:sticky;top:0;z-index:90;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(16px) saturate(1.2);
+  -webkit-backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:1px solid rgba(226,227,233,.07)}
+.navin{display:flex;align-items:center;gap:var(--spacing-20);height:66px;
+  max-width:var(--page-max-width);margin:0 auto;padding:0 var(--pad)}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto;font-weight:700;
+  letter-spacing:.26em;font-size:14px;color:var(--color-pure-white)}
+.brand .mk{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+  border:1px solid rgba(204,145,102,.5);font-family:var(--font-ivy-presto);
+  font-size:14px;color:var(--color-golden-gradient);flex:0 0 auto}
+.navlinks{display:flex;gap:26px}
+.navlinks a{font-size:var(--text-body-sm);color:var(--color-silver-text);
+  padding:20px 0;position:relative;transition:color .2s}
+.navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:14px;height:1px;
+  background:var(--gradient-golden-gradient);transition:right .35s ease}
+.navlinks a:hover{color:var(--color-pure-white)}
+.navlinks a:hover::after{right:0}
+
+.toggle{display:flex;border:1px solid rgba(226,227,233,.4);border-radius:var(--radius-full);
+  overflow:hidden;font-size:12px;flex:0 0 auto}
+.toggle button{background:transparent;color:var(--color-silver-text);border:0;font:inherit;
+  font-weight:600;letter-spacing:.1em;padding:6px 13px;cursor:pointer;transition:.2s}
+.toggle button[aria-pressed="true"]{background:var(--color-pure-white);color:#000}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;
+  font-size:var(--text-body-sm);cursor:pointer;border:0;transition:transform .15s,opacity .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--color-pure-white);color:var(--color-charcoal-canvas);
+  border-radius:var(--radius-full);padding:11px 26px}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:transparent;color:var(--color-pure-white);
+  border:1px solid rgba(226,227,233,.5);border-radius:var(--radius-full);padding:10px 22px}
+.btn-ghost:hover{border-color:var(--color-golden-gradient);color:var(--color-golden-gradient)}
+
+/* ============================================================
+   LAYOUT / SECTIONS
+   ============================================================ */
+main{position:relative;z-index:2}
+section{padding:var(--sec) 0}
+.sec-head{margin-bottom:clamp(36px,6vw,64px);max-width:760px}
+.sec-head h2{font-family:var(--font-ivy-presto);font-weight:500;
+  font-size:var(--d-hlg);line-height:1.1;letter-spacing:.01em;margin-top:14px;
+  color:var(--color-pure-white)}
+.sec-head p{margin-top:18px;color:var(--color-silver-text);font-size:var(--text-subheading);
+  line-height:var(--leading-subheading);letter-spacing:var(--tracking-subheading);max-width:62ch}
+
+.reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:clamp(64px,10vw,118px) 0 var(--sec)}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:clamp(32px,6vw,72px);align-items:center}
+.hero h1{font-family:var(--font-ivy-presto);font-weight:500;color:var(--color-pure-white);
+  font-size:var(--d-display);line-height:1.02;letter-spacing:.01em;margin:20px 0}
+.hero h1 .rot-wrap{display:block;height:1.05em;overflow:hidden;position:relative}
+.hero h1 .rot{display:inline-block;font-style:italic;
+  background:linear-gradient(103deg,#ae9357,#fff0cc 42%,#cc9166 64%,#ae9357 88%);
+  background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 4s linear infinite}
+.hero h1 .rot.swap{animation:rotSwap .5s cubic-bezier(.3,.7,.2,1)}
+@keyframes rotSwap{0%{opacity:0;transform:translateY(38px)}60%{opacity:1}100%{transform:translateY(0)}}
+.hero .lead{margin-top:8px;color:var(--color-silver-text);font-size:var(--text-subheading);
+  line-height:1.4;max-width:54ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.chip{font-size:var(--text-caption);font-weight:600;letter-spacing:.12em;
+  color:var(--color-porcelain-text);background:var(--color-pewter-accent);
+  border:1px solid rgba(226,227,233,.08);border-radius:var(--radius-full);
+  padding:8px 15px;opacity:0;transform:translateY(10px);transition:border-color .25s,color .25s}
+.chip.in{animation:chipIn .55s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes chipIn{to{opacity:1;transform:none}}
+.chip:hover{border-color:rgba(204,145,102,.55);color:#fff}
+.statrow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:32px;
+  font-size:var(--text-body-sm);color:var(--color-stone-text)}
+.statrow b{color:var(--color-white-frost);font-weight:600}
+.statrow .dot{color:var(--color-golden-gradient)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+.portrait{position:relative;justify-self:center}
+.portrait .frame{width:clamp(220px,72vw,300px);aspect-ratio:3/4;border-radius:var(--radius-lg);
+  position:relative;overflow:hidden;background:var(--color-obsidian-surface);
+  border:1px solid rgba(204,145,102,.32);
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 80px -30px rgba(204,145,102,.25)}
+.portrait .frame::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(204,145,102,.14),transparent 42%,rgba(0,0,0,.5))}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) contrast(1.03)}
+.portrait .mono{position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--font-ivy-presto);font-size:78px;color:var(--color-golden-gradient);
+  background:radial-gradient(circle at 50% 38%,rgba(204,145,102,.12),transparent 60%)}
+.portrait .tagband{position:absolute;left:14px;right:14px;bottom:14px;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--color-porcelain-text);background:rgba(0,0,0,.5);
+  backdrop-filter:blur(6px);border:1px solid rgba(226,227,233,.1);
+  border-radius:var(--radius-full);padding:8px 12px;text-align:center}
+
+/* ---------- ribbon divider (inline SVG) ---------- */
+.ribbon{display:block;width:100%;height:54px;opacity:.55;margin:6px 0}
+
+/* ---------- cards / grids ---------- */
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--color-slate-gray);border-radius:var(--radius-lg);
+  padding:var(--card-padding);border:1px solid rgba(226,227,233,.05);
+  transition:background .3s,border-color .3s,transform .3s}
+.card:hover{background:#212229;border-color:rgba(204,145,102,.4);transform:translateY(-3px)}
+.card .ic{width:30px;height:30px;color:var(--color-silver-text);margin-bottom:18px}
+.card h3{font-size:var(--text-subheading);font-weight:600;color:var(--color-pure-white);
+  letter-spacing:-.01em}
+.card p{margin-top:10px;color:var(--color-silver-text);font-size:var(--text-body-sm);
+  line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tag{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--color-stone-text);
+  border:1px solid rgba(226,227,233,.12);border-radius:var(--radius-sm);padding:4px 8px}
+
+/* ---------- profile / facts ---------- */
+.profile-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,6vw,64px);align-items:start}
+.profile-wrap .stmt{font-family:var(--font-ivy-presto);font-weight:400;
+  font-size:clamp(1.5rem,3vw,2rem);line-height:1.32;color:var(--color-porcelain-text)}
+.profile-wrap .stmt .gold-text{font-style:italic}
+.facts{display:grid;gap:1px;background:rgba(226,227,233,.06);
+  border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(226,227,233,.06)}
+.facts .row{display:flex;justify-content:space-between;gap:16px;
+  background:var(--color-charcoal-canvas);padding:16px 20px;font-size:var(--text-body-sm)}
+.facts .row .k{color:var(--color-stone-text);font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;font-size:11px}
+.facts .row .v{color:var(--color-white-frost);text-align:right}
+
+/* ---------- research / work ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.filters button{background:transparent;border:1px solid rgba(226,227,233,.18);
+  color:var(--color-silver-text);font:inherit;font-size:var(--text-body-sm);font-weight:500;
+  border-radius:var(--radius-full);padding:8px 18px;cursor:pointer;transition:.2s}
+.filters button[aria-pressed="true"]{background:var(--color-pure-white);color:#000;border-color:#fff}
+.filters button:hover{color:#fff;border-color:rgba(204,145,102,.5)}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj{background:var(--color-slate-gray);border-radius:var(--radius-lg);
+  padding:var(--card-padding);border:1px solid rgba(226,227,233,.05);
+  display:flex;flex-direction:column;min-height:230px;position:relative;overflow:hidden;
+  transition:background .3s,border-color .3s,transform .3s}
+.proj::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:var(--gradient-golden-gradient);opacity:0;transition:opacity .3s}
+.proj:hover{background:#212229;border-color:rgba(204,145,102,.4);transform:translateY(-3px)}
+.proj:hover::before{opacity:.85}
+.proj .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.proj .no{font-family:var(--font-ivy-presto);font-size:20px;color:var(--color-stone-text)}
+.proj .cat{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--color-golden-gradient);
+  border:1px solid rgba(204,145,102,.32);border-radius:var(--radius-sm);padding:4px 7px;white-space:nowrap}
+.proj h3{margin-top:18px;font-size:18px;font-weight:600;color:var(--color-pure-white);line-height:1.3}
+.proj .th{margin-top:10px;color:var(--color-silver-text);font-size:var(--text-body-sm);
+  line-height:1.5;flex:1}
+.proj .metric{margin-top:16px;font-size:12px;font-weight:600;color:var(--color-porcelain-text);
+  letter-spacing:.02em}
+.proj .lk{margin-top:14px;font-size:12px;color:var(--color-stone-text);
+  display:inline-flex;align-items:center;gap:6px;transition:color .2s;word-break:break-all}
+.proj .lk:hover{color:var(--color-golden-gradient)}
+.proj.hide{display:none}
+
+/* ---------- experience ---------- */
+.xp{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,40px);
+  padding:26px 0;border-top:1px solid rgba(226,227,233,.07)}
+.xp:first-child{border-top:0}
+.xp .when{font-size:var(--text-body-sm);color:var(--color-stone-text);font-weight:500;
+  letter-spacing:.02em;padding-top:3px}
+.xp .co{font-size:var(--text-subheading);font-weight:600;color:var(--color-pure-white)}
+.xp .ti{color:var(--color-golden-gradient);font-size:var(--text-body-sm);margin-top:5px;font-weight:500}
+.xp p{color:var(--color-silver-text);font-size:var(--text-body-sm);margin-top:12px;line-height:1.5}
+
+/* ---------- awards ---------- */
+.aw{display:flex;align-items:baseline;gap:14px;padding:15px 0;
+  border-bottom:1px dashed rgba(226,227,233,.1)}
+.aw:last-child{border-bottom:0}
+.aw .yr{font-size:var(--text-body-sm);color:var(--color-stone-text);
+  width:46px;flex:0 0 auto;font-weight:600}
+.aw .rk{font-size:11px;font-weight:700;letter-spacing:.06em;width:62px;flex:0 0 auto;
+  color:var(--color-silver-text);text-transform:uppercase}
+.aw.top .rk{background:var(--gradient-golden-gradient);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.aw .nm{flex:1;color:var(--color-white-frost);font-size:var(--text-body-sm)}
+.aw.top .nm{color:var(--color-pure-white);font-weight:500}
+.aw .ld{flex:1;border-bottom:1px dotted rgba(226,227,233,.14);transform:translateY(-4px)}
+
+/* ---------- skills ---------- */
+.skill{display:grid;grid-template-columns:200px 1fr;gap:clamp(12px,3vw,32px);
+  padding:18px 0;border-top:1px solid rgba(226,227,233,.07)}
+.skill:first-child{border-top:0}
+.skill .k{font-size:var(--text-body-sm);font-weight:600;color:var(--color-stone-text);
+  letter-spacing:.06em;text-transform:uppercase}
+.skill .v{display:flex;flex-wrap:wrap;gap:8px}
+.skill .v span{font-size:var(--text-body-sm);color:var(--color-porcelain-text);
+  background:var(--color-pewter-accent);border:1px solid rgba(226,227,233,.07);
+  border-radius:var(--radius-full);padding:6px 14px}
+
+/* ---------- contact ---------- */
+.contact{text-align:center}
+.contact h2{font-family:var(--font-ivy-presto);font-weight:500;font-size:var(--d-hlg);
+  color:var(--color-pure-white);line-height:1.12;letter-spacing:.01em}
+.contact h2 .gold-text{font-style:italic}
+.contact p{margin-top:20px;color:var(--color-silver-text);font-size:var(--text-subheading);
+  max-width:50ch;margin-left:auto;margin-right:auto}
+.contact .cta{justify-content:center;margin-top:38px}
+.links{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;margin-top:46px;
+  font-size:var(--text-body-sm)}
+.links a{color:var(--color-silver-text);display:inline-flex;gap:6px;transition:color .2s}
+.links a:hover{color:var(--color-golden-gradient)}
+footer{border-top:1px solid rgba(226,227,233,.07);padding:30px 0 calc(34px + env(safe-area-inset-bottom));
+  margin-top:var(--sec)}
+footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  font-size:var(--text-caption);color:var(--color-stone-text);letter-spacing:.04em}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .navlinks{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .portrait{order:-1}
+  .profile-wrap{grid-template-columns:1fr;gap:36px}
+  .g3,.work{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:680px){
+  .g3,.g2,.work{grid-template-columns:1fr}
+  .xp,.skill{grid-template-columns:1fr;gap:8px}
+  .xp .when{color:var(--color-golden-gradient)}
+  .navin{gap:10px}
+  .brand{letter-spacing:.18em}
+  .btn-primary{padding:10px 18px}
+  .aw{flex-wrap:wrap}
+  .aw .ld{display:none}
+}
+@media (hover:none){
+  .card:hover,.proj:hover{transform:none}
+}
+:focus-visible{outline:2px solid var(--color-golden-gradient);outline-offset:3px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  #intro{display:none}
+}
+@media print{
+  .bg,nav,#intro,.cta,.filters,footer{display:none!important}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body class="lang-ko">
+
+<div class="bg" aria-hidden="true">
+  <div class="grid"></div><div class="blob b1"></div><div class="blob b2"></div><div class="grain"></div>
+</div>
+
+<a href="#main" class="skip"><span class="t" data-ko="본문 바로가기" data-en="Skip to content"></span></a>
+
+<!-- ===================== INTRO ===================== -->
+<div id="intro" role="dialog" aria-label="Intro">
+  <div class="beat" data-beat="1">
+    <p class="kick">WELCOME&nbsp;TO</p>
+    <div class="big">DRAKOS&nbsp;PORTFOLIO</div>
+    <div class="rule"></div>
+  </div>
+  <div class="beat" data-beat="2">
+    <p class="kick">JINWOO&nbsp;CHO&nbsp;·&nbsp;조진우</p>
+    <div class="big tag">CS-Backed&nbsp;Future&nbsp;Financier</div>
+    <div class="rule"></div>
+  </div>
+  <button id="introSkip" type="button">SKIP →</button>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <div class="navin">
+    <a href="#main" class="brand"><span class="mk">JC</span>DRAKOS</a>
+    <div class="navlinks">
+      <a href="#work" class="t" data-ko="작업" data-en="Work"></a>
+      <a href="#exp" class="t" data-ko="경력" data-en="Experience"></a>
+      <a href="#awards" class="t" data-ko="수상" data-en="Awards"></a>
+      <a href="#contact" class="t" data-ko="연락처" data-en="Contact"></a>
+    </div>
+    <div class="toggle" role="group" aria-label="Language">
+      <button data-lang="ko" aria-pressed="true">KO</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener">
+      <span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
+  </div>
+</nav>
+
+<main id="main">
+<div class="wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-label="Intro">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow reveal"><span class="n">●</span>&nbsp; JINWOO CHO · 조진우 — <span class="t" data-ko="포트폴리오" data-en="Portfolio"></span></p>
+        <h1 class="reveal">
+          <span class="t" data-ko="나는" data-en="I build at the"></span>
+          <span class="rot-wrap"><span class="rot" id="rot">FINANCE</span></span>
+          <span class="t" data-ko="에서 만듭니다" data-en="frontier"></span>
+        </h1>
+        <p class="lead reveal t" data-ko="블록체인 · 금융 · 데이터 리서처. 컴퓨터공학을 기반으로 금융의 미래를 설계하는 사람 — CS-Backed Future Financier." data-en="Blockchain · finance · data researcher — a CS-Backed Future Financier engineering the future of finance."></p>
+        <div class="chips" id="chipwall" aria-label="Domains">
+          <span class="chip">FINANCE</span><span class="chip">QUANT</span><span class="chip">WEB3</span>
+          <span class="chip">IT</span><span class="chip">AI</span><span class="chip">DATA</span>
+          <span class="chip">BLOCKCHAIN</span><span class="chip">ML</span><span class="chip">ON-CHAIN</span>
+          <span class="chip">ZK / STARK</span><span class="chip">RESEARCH</span><span class="chip">TRADING</span>
+        </div>
+        <div class="statrow reveal">
+          <span><b>Inha Univ.</b> <span class="t" data-ko="컴퓨터공학 재학" data-en="Computer Eng."></span></span>
+          <span class="dot">·</span><span>GPA <b>3.96 / 4.5</b></span>
+          <span class="dot">·</span><span><b>KOFIA</b> <span class="t" data-ko="투자자산운용사" data-en="Cert. Inv. Manager"></span></span>
+          <span class="dot">·</span><span class="t" data-ko="근무가능 <b>2026.05.25–08.21</b>" data-en="Available <b>2026.05.25–08.21</b>"></span>
+        </div>
+        <div class="cta reveal">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener"><span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
+          <a class="btn btn-ghost" href="resume-bcg-bw.html" target="_blank" rel="noopener"><span class="t" data-ko="이력서 PDF" data-en="Résumé PDF"></span></a>
+          <a class="btn btn-ghost" href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="portrait reveal">
+        <div class="frame">
+          <div class="mono" aria-hidden="true">JC</div>
+          <img src="profile.jpg" alt="조진우 Jinwoo Cho" onerror="this.style.display='none'">
+          <div class="tagband">CS-BACKED FUTURE FINANCIER</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="ribbon" viewBox="0 0 1200 54" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ae9357" stop-opacity="0"/><stop offset=".4" stop-color="#fff0cc"/>
+      <stop offset=".7" stop-color="#cc9166"/><stop offset="1" stop-color="#ae9357" stop-opacity="0"/>
+    </linearGradient></defs>
+    <path d="M0 40 C 220 6 360 6 600 30 S 980 54 1200 16" fill="none" stroke="url(#gold)" stroke-width="1.4"/>
+    <path d="M0 48 C 260 20 420 20 600 38 S 1000 60 1200 28" fill="none" stroke="url(#gold)" stroke-width="1" opacity=".5"/>
+  </svg>
+
+  <!-- ===================== PROFILE ===================== -->
+  <section id="profile" aria-label="Profile">
+    <div class="profile-wrap">
+      <div class="reveal">
+        <p class="eyebrow"># <span class="t" data-ko="프로필" data-en="Profile"></span></p>
+        <p class="stmt" style="margin-top:22px">
+          <span class="t" data-ko="데이터 수집·분류·분석 파이프라인을 직접 설계하고, BLUENODE 리서치 팀 리드로서 팀의 방향과 산출물 품질을 책임집니다. 복잡한 금융·온체인 현상을 " data-en="I build data collection–classification–analysis pipelines end to end, and as Research Team Lead at BLUENODE I own the team's direction and output quality. My edge is turning complex financial and on-chain phenomena into "></span><span class="gold-text t" data-ko="누구나 실행할 수 있는 결론" data-en="conclusions anyone can act on"></span><span class="t" data-ko="으로 바꾸는 것이 강점입니다." data-en="."></span>
+        </p>
+      </div>
+      <div class="facts reveal">
+        <div class="row"><span class="k">Status</span><span class="v t" data-ko="인하대 컴퓨터공학 재학" data-en="B.S. Computer Eng., Inha"></span></div>
+        <div class="row"><span class="k">Focus</span><span class="v t" data-ko="블록체인 · 금융 · 데이터" data-en="Blockchain · Finance · Data"></span></div>
+        <div class="row"><span class="k">Location</span><span class="v t" data-ko="광명, 경기 · 인천" data-en="Gwangmyeong · Incheon, KR"></span></div>
+        <div class="row"><span class="k">Cert.</span><span class="v t" data-ko="투자자산운용사 (KOFIA, 2025)" data-en="Cert. Inv. Manager (KOFIA)"></span></div>
+        <div class="row"><span class="k">Lang</span><span class="v">한국어 · English</span></div>
+        <div class="row"><span class="k">Links</span><span class="v"><a href="https://github.com/superjin1218" target="_blank" rel="noopener" style="color:#cc9166">GitHub</a> · <a href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener" style="color:#cc9166">LinkedIn</a> · <a href="https://x.com/Drakos1218" target="_blank" rel="noopener" style="color:#cc9166">X</a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DOMAINS ===================== -->
+  <section id="domains" aria-label="What I do">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="전문 영역" data-en="Domains"></span></p>
+      <h2 class="t" data-ko="단어가 아니라 결과물로 증명합니다" data-en="The words, backed by the work"></h2>
+      <p class="t" data-ko="FINANCE · QUANT · WEB3 · IT · AI — 각 영역마다 실제 산출물이 있습니다." data-en="FINANCE · QUANT · WEB3 · IT · AI — every label here has shipped work behind it."></p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+        <h3>FINANCE</h3>
+        <p class="t" data-ko="자산운용 · 시장 리서치 · 헤지펀드 13F 분석 · 자동매매. 투자자산운용사(KOFIA) 보유." data-en="Asset management, market research, hedge-fund 13F analysis, algo-trading. KOFIA-certified."></p>
+        <div class="tags"><span class="tag">자산운용</span><span class="tag">13F</span><span class="tag">Algo-trading</span></div>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16M8 16l3-5 3 3 4-7"/><circle cx="11" cy="11" r="1"/></svg>
+        <h3>QUANT · DATA</h3>
+        <p class="t" data-ko="데이터 파이프라인 · 빅데이터 · CGE · 몬테카를로 시뮬레이션 · 예측 모델링." data-en="Data pipelines, big data, CGE, Monte-Carlo simulation, predictive modeling."></p>
+        <div class="tags"><span class="tag">Pipelines</span><span class="tag">CGE</span><span class="tag">Monte-Carlo</span></div>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z"/><path d="M12 2v18M4 6.5l8 4.5 8-4.5"/></svg>
+        <h3>WEB3 · ON-CHAIN</h3>
+        <p class="t" data-ko="이더리움 · 온체인 분석 · 스테이블코인 · ZK/STARK · x402 결제 프로토콜." data-en="Ethereum, on-chain analysis, stablecoins, ZK/STARK, the x402 payment protocol."></p>
+        <div class="tags"><span class="tag">Ethereum</span><span class="tag">ZK/STARK</span><span class="tag">x402</span></div>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg>
+        <h3>AI · ML</h3>
+        <p class="t" data-ko="LLM 하네스 · AI 공격 에이전트 · 머신러닝 · MCP 워크플로 (Claude Code)." data-en="LLM harnesses, AI attack agents, machine learning, MCP workflows (Claude Code)."></p>
+        <div class="tags"><span class="tag">LLM Harness</span><span class="tag">ML</span><span class="tag">MCP</span></div>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6M13 4l-2 16"/></svg>
+        <h3>IT · ENGINEERING</h3>
+        <p class="t" data-ko="Python · C++ · 풀스택 데모 (Next.js · Arbitrum Stylus/Rust · Solidity)." data-en="Python, C++, full-stack demos (Next.js, Arbitrum Stylus/Rust, Solidity)."></p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">Rust/Stylus</span></div>
+      </div>
+      <div class="card reveal">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5M21 8v6"/></svg>
+        <h3>EDUCATION</h3>
+        <p class="t" data-ko="고교 블록체인 조교 · x402 강의 · 비트코인 백서 해설 · 670+ 커뮤니티 운영." data-en="High-school blockchain TA, x402 lecture, Bitcoin-whitepaper explainer, a 670+ community."></p>
+        <div class="tags"><span class="tag">TA</span><span class="tag">Lecture</span><span class="tag">Community</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SELECTED WORK ===================== -->
+  <section id="work" aria-label="Selected research and work">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="선별 작업" data-en="Selected Work"></span></p>
+      <h2 class="t" data-ko="리서치 · 프로젝트" data-en="Research &amp; Projects"></h2>
+      <p class="t" data-ko="블록체인에 한정되지 않습니다 — 금융, 데이터, ML, 교육까지." data-en="Not limited to blockchain — finance, data, ML and education too."></p>
+    </div>
+    <div class="filters reveal" role="group" aria-label="Filter">
+      <button data-f="all" aria-pressed="true">ALL</button>
+      <button data-f="WEB3" aria-pressed="false">WEB3</button>
+      <button data-f="FINANCE" aria-pressed="false">FINANCE</button>
+      <button data-f="DATA" aria-pressed="false">DATA</button>
+      <button data-f="ML" aria-pressed="false">ML</button>
+      <button data-f="EDU" aria-pressed="false">EDU</button>
+    </div>
+    <div class="work" id="workgrid">
+
+      <article class="proj reveal" data-cat="WEB3 FINANCE AI">
+        <div class="top"><span class="no">01</span><span class="cat">WEB3 · AI · FIN</span></div>
+        <h3 class="t" data-ko="x402 결제리스크 보험 + LLM 공격 에이전트 (ACE)" data-en="x402 Payment-Risk Insurance + LLM Attack Agent (ACE)"></h3>
+        <p class="th t" data-ko="AI 에이전트를 일부러 공격해 위험을 측정하고 보험료를 산정, 심사 통과 설정을 ERC-8004 NFT에 지문으로 봉인하는 계리 설계 — 논문." data-en="An actuarial design that adversarially measures agent risk to price insurance, then seals the approved config as an ERC-8004 NFT fingerprint — academic paper."></p>
+        <div class="metric">8 LHAA modules · Case A $154 → Case C $39,418/yr</div>
+        <a class="lk" href="https://i402.vercel.app" target="_blank" rel="noopener">i402.vercel.app ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3 FINANCE">
+        <div class="top"><span class="no">02</span><span class="cat">WEB3 · FIN · QUANT</span></div>
+        <h3 class="t" data-ko="한국형 온체인 레포(Repo) 시스템 — NODIT" data-en="Korean On-chain Repo System — NODIT"></h3>
+        <p class="th t" data-ko="스마트컨트랙트 기반 일중 DvP 결제 + 1만 회 몬테카를로로 경제적 유효성 검증. Hyperledger Besu·동적 헤어컷·FSS 규제 노드 설계." data-en="Smart-contract intraday DvP plus a 10,000-run Monte-Carlo validation. Hyperledger Besu, dynamic haircut, FSS regulator node."></p>
+        <div class="metric">≈ ₩3.03T/yr benefit · settlement risk −91.7%</div>
+        <a class="lk" href="https://drive.google.com/file/d/1xg-MrQOMHZtQsNxeSA9s5sbZdXKPlxOs/view" target="_blank" rel="noopener">drive ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3">
+        <div class="top"><span class="no">03</span><span class="cat">WEB3 · ZK · 1ST</span></div>
+        <h3 class="t" data-ko="starkverifier — Arbitrum Mini Hackathon 1위" data-en="starkverifier — Arbitrum Mini Hackathon, 1st"></h3>
+        <p class="th t" data-ko="Arbitrum Stylus(Rust/WASM)와 Solidity에 동일 ABI로 Poseidon·Merkle 검증을 구현하고 온체인 가스 비용을 비교한 벤치마크." data-en="Same-ABI Poseidon/Merkle verification in Arbitrum Stylus (Rust/WASM) vs Solidity, gas-benchmarked on-chain."></p>
+        <div class="metric">🏆 Hackathon 1st · Stylus vs EVM gas study</div>
+        <a class="lk" href="https://github.com/superjin1218/starkverifier" target="_blank" rel="noopener">github.com/superjin1218/starkverifier ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="FINANCE DATA">
+        <div class="top"><span class="no">04</span><span class="cat">FINANCE · DATA</span></div>
+        <h3 class="t" data-ko="13F 헤지펀드 매매 분석 파이프라인" data-en="13F Hedge-Fund Flow Pipeline"></h3>
+        <p class="th t" data-ko="SEC EDGAR 13F-HR을 직접 크롤링·파싱해 6,023개 공통 펀드를 섹터·시총·TOP20·옵션으로 분류, 70여 개 CSV 산출." data-en="Crawled & parsed SEC EDGAR 13F-HR for 6,023 common funds, classified by sector × mcap × TOP20 × options into 70+ CSVs."></p>
+        <div class="metric">6,023 funds · 70+ CSV · SEC API crawler</div>
+        <a class="lk" href="https://hanglestocks.tistory.com/136" target="_blank" rel="noopener">hanglestocks.tistory.com ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3 DATA">
+        <div class="top"><span class="no">05</span><span class="cat">WEB3 · DATA</span></div>
+        <h3 class="t" data-ko="USDC vs USDT 온체인 분석 대시보드" data-en="USDC vs USDT On-chain Dashboard"></h3>
+        <p class="th t" data-ko="발행량·시가총액·온체인 거래활동을 비교 — 90일 순발행·성장은 USDC, 절대 거래량은 USDT 우위." data-en="Compares issuance, market cap and on-chain activity — USDC leads 90-day growth, USDT leads absolute volume."></p>
+        <div class="metric">Live dashboard · stablecoin metrics</div>
+        <a class="lk" href="https://usd-tvs-usdc.vercel.app/" target="_blank" rel="noopener">usd-tvs-usdc.vercel.app ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3 FINANCE">
+        <div class="top"><span class="no">06</span><span class="cat">WEB3 · FIN</span></div>
+        <h3 class="t" data-ko="RWA 기반 블록체인 팩토링" data-en="RWA-based Blockchain Factoring"></h3>
+        <p class="th t" data-ko="실물 매출채권을 토큰화해 온체인에서 팩토링하는 RWA 구조금융 설계 — 토큰화·검증·자금풀·상환 흐름." data-en="Structured finance that tokenizes real-world receivables and factors them on-chain — tokenization, verification, funding, repayment."></p>
+        <div class="metric">RWA structured-finance design</div>
+        <a class="lk" href="https://drive.google.com/file/d/1C3rAW4sV6jALgqVdFfJWazPTCQdRs00G/view" target="_blank" rel="noopener">drive ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3">
+        <div class="top"><span class="no">07</span><span class="cat">WEB3 · STRATEGY</span></div>
+        <h3 class="t" data-ko="토스(Toss) 자체 L1 전략 분석" data-en="Toss Own-L1 Strategy Analysis"></h3>
+        <p class="th t" data-ko="토스의 자체 L1 블록체인 진출을 경쟁 체인·스테이블코인·결제시장과 L1 아키텍처 양면에서 분석·제언." data-en="Two-sided analysis (market + L1 architecture) and recommendations on Toss launching its own L1."></p>
+        <div class="metric">Market + technical strategy memo</div>
+        <a class="lk" href="https://drive.google.com/file/d/1UrKtpdbaH4kS2r7J0gdySmLxr42CFZxO/view" target="_blank" rel="noopener">drive ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="WEB3">
+        <div class="top"><span class="no">08</span><span class="cat">WEB3 · ZK</span></div>
+        <h3 class="t" data-ko="Trustless DeFi 트레이딩 에이전트 검증" data-en="Trustless DeFi Trading-Agent Verification"></h3>
+        <p class="th t" data-ko="트레이딩 에이전트가 규칙대로 동작했음을 무신뢰로 증명하는 검증에 STARK를 적용, SNARK 대비 속도 우위 시연." data-en="Applied STARK to trustlessly prove a trading agent followed its rules, demonstrating a speed edge over SNARK."></p>
+        <div class="metric">STARK vs SNARK · proof-speed demo</div>
+        <a class="lk" href="https://drive.google.com/file/d/1Uob-Y7LN-tRjcVZFlOFRBI2HTdAmn3J8/view" target="_blank" rel="noopener">drive ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="EDU WEB3">
+        <div class="top"><span class="no">09</span><span class="cat">EDU · WEB3</span></div>
+        <h3 class="t" data-ko="비트코인 백서 상세 해설" data-en="Bitcoin Whitepaper — Deep Explainer"></h3>
+        <p class="th t" data-ko="사토시 백서를 작업증명·타임스탬프·합의·UTXO까지 비전공자용 예시·도식으로 재구성한 온보딩 해설." data-en="Rebuilt Satoshi's whitepaper (PoW, timestamp, consensus, UTXO) into an accessible onboarding explainer."></p>
+        <div class="metric">Published explainer · onboarding</div>
+        <a class="lk" href="https://hanglestocks.tistory.com/138" target="_blank" rel="noopener">hanglestocks.tistory.com/138 ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="FINANCE">
+        <div class="top"><span class="no">10</span><span class="cat">MACRO · FIN</span></div>
+        <h3 class="t" data-ko="신뢰의 공백과 비트코인" data-en="The Void of Trust &amp; Bitcoin"></h3>
+        <p class="th t" data-ko="금→달러→비트코인으로 이어지는 ‘화폐 신뢰의 닻’ 이전을 공개 데이터로 논증한 통화사 에세이." data-en="A monetary-history essay arguing the shift of the ‘trust anchor’ from gold to the dollar to Bitcoin, grounded in public data."></p>
+        <div class="metric">Data-grounded macro essay</div>
+        <a class="lk" href="https://medium.com/@seyunjeong158/%EC%8B%A0%EB%A2%B0%EC%9D%98-%EA%B3%B5%EB%B0%B1%EA%B3%BC-%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-0dbfda5972ca" target="_blank" rel="noopener">medium ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="EDU WEB3">
+        <div class="top"><span class="no">11</span><span class="cat">EDU · WEB3</span></div>
+        <h3 class="t" data-ko="x402 완전정복 — 발표/강의" data-en="x402 Deep-Dive — Lecture"></h3>
+        <p class="th t" data-ko="HTTP 402를 되살린 Coinbase x402 프로토콜을 30슬라이드·약 55분 분량으로 입문자에게 브리핑한 강의." data-en="A 30-slide, ~55-min lecture briefing newcomers on Coinbase's x402 protocol (HTTP 402 revived)."></p>
+        <div class="metric">30 slides · ~55 min briefing</div>
+        <a class="lk" href="https://www.x402.org/" target="_blank" rel="noopener">x402.org ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="EDU">
+        <div class="top"><span class="no">12</span><span class="cat">EDU</span></div>
+        <h3 class="t" data-ko="부광고등학교 블록체인 실습 조교" data-en="Bugwang HS — Blockchain Teaching Assistant"></h3>
+        <p class="th t" data-ko="고등학생 대상 지갑·Solidity·바이브코딩 실습 지도. 환경설정 트러블슈팅과 수준별 1:1 보조." data-en="Hands-on TA for high-schoolers: wallets, Solidity, vibe-coding; troubleshooting and leveled 1:1 support."></p>
+        <div class="metric">MetaMask · Remix · ERC-20/721 labs</div>
+        <a class="lk" href="https://superjin1218.github.io/JinProfile/" target="_blank" rel="noopener">portfolio ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="ML FINANCE">
+        <div class="top"><span class="no">13</span><span class="cat">ML · ECON</span></div>
+        <h3 class="t" data-ko="K-콘텐츠 수출 CGE 분석" data-en="K-content Export — CGE Analysis"></h3>
+        <p class="th t" data-ko="연산가능일반균형(CGE) 모형으로 K-콘텐츠 수출 효과를 계량 분석 — 제23회 한국경제논문 공모전 우수상." data-en="Quantified K-content export effects with a CGE model — Excellence Award, 23rd Korea Economics Paper Competition."></p>
+        <div class="metric">🥈 Excellence Award · CGE modeling</div>
+        <a class="lk" href="https://superjin1218.github.io/JinProfile/" target="_blank" rel="noopener">details ↗</a>
+      </article>
+
+      <article class="proj reveal" data-cat="ML FINANCE">
+        <div class="top"><span class="no">14</span><span class="cat">ML · FIN</span></div>
+        <h3 class="t" data-ko="시그모이드 함수 주가예측 검증" data-en="Sigmoid Stock-Prediction Verification"></h3>
+        <p class="th t" data-ko="시그모이드 기반 주가예측 모델의 유효성을 검증 — 한국디지털컨텐츠학회 하계학술대회 은상." data-en="Validated a sigmoid-based stock-prediction model — Silver, Korea Digital Contents Society Summer Conference."></p>
+        <div class="metric">🥈 Silver · model validation</div>
+        <a class="lk" href="https://superjin1218.github.io/JinProfile/" target="_blank" rel="noopener">details ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="exp" aria-label="Experience">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="경력" data-en="Experience"></span></p>
+      <h2 class="t" data-ko="활동 · 경력" data-en="Roles &amp; Activities"></h2>
+    </div>
+    <div>
+      <article class="xp reveal">
+        <div class="when">2026.01 — <span class="t" data-ko="현재" data-en="Present"></span></div>
+        <div>
+          <div class="co t" data-ko="BLUENODE — 인하대학교 블록체인학회" data-en="BLUENODE — Inha Univ. Blockchain Society"></div>
+          <div class="ti t" data-ko="리서치 팀 리드 · 온보딩 팀 리드" data-en="Research Team Lead · Onboarding Team Lead"></div>
+          <p class="t" data-ko="리서치·온보딩 팀을 이끌며 BLUENODE의 리서치 방향과 산출물 품질을 총괄." data-en="Lead the research & onboarding teams; own BLUENODE's research direction and output quality."></p>
+        </div>
+      </article>
+      <article class="xp reveal">
+        <div class="when">2026.04 — <span class="t" data-ko="현재" data-en="Present"></span></div>
+        <div>
+          <div class="co t" data-ko="인천부광고등학교" data-en="Incheon Bugwang High School"></div>
+          <div class="ti t" data-ko="블록체인 교육 조교" data-en="Blockchain Teaching Assistant"></div>
+          <p class="t" data-ko="고등학생 대상 블록체인 수업 운영과 실습 지도(지갑·Solidity·바이브코딩)." data-en="Run sessions and hands-on labs for high-schoolers (wallets, Solidity, vibe-coding)."></p>
+        </div>
+      </article>
+      <article class="xp reveal">
+        <div class="when">2024 — <span class="t" data-ko="현재" data-en="Present"></span></div>
+        <div>
+          <div class="co">StockTalk Inha</div>
+          <div class="ti t" data-ko="설립 · 운영" data-en="Founder & Operator"></div>
+          <p class="t" data-ko="인하대 주식 오픈채팅 커뮤니티를 개설·운영, 현재 670명+ 규모로 성장." data-en="Founded and grew the Inha stock open-chat community to 670+ members."></p>
+        </div>
+      </article>
+      <article class="xp reveal">
+        <div class="when">2025.03 — 2025.12</div>
+        <div>
+          <div class="co t" data-ko="인천연합주식동아리 I.T.T" data-en="I.T.T — Incheon Inter-Univ. Stock Club"></div>
+          <div class="ti t" data-ko="3팀 팀장" data-en="Team 3 Lead"></div>
+        </div>
+      </article>
+      <article class="xp reveal">
+        <div class="when">2025.02 — 2025.07</div>
+        <div>
+          <div class="co t" data-ko="인하대 금융 인공지능 연구실" data-en="Inha Finance AI Lab"></div>
+          <div class="ti t" data-ko="학부 연구생" data-en="Undergraduate Researcher"></div>
+        </div>
+      </article>
+      <article class="xp reveal">
+        <div class="when">2021 — 2023</div>
+        <div>
+          <div class="co t" data-ko="대한민국 공군" data-en="Republic of Korea Air Force"></div>
+          <div class="ti t" data-ko="운전병 · 병장 만기전역" data-en="Vehicle Operator · Discharged as Sergeant"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== AWARDS ===================== -->
+  <section id="awards" aria-label="Awards">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="수상" data-en="Honors"></span></p>
+      <h2 class="t" data-ko="수상 · 성과" data-en="Honors &amp; Awards"></h2>
+    </div>
+    <div class="reveal">
+      <div class="aw top"><span class="yr">2026</span><span class="rk">1ST</span><span class="nm t" data-ko="Arbitrum Mini Hackathon 1위 — STARK zk Coprocessor" data-en="Arbitrum Mini Hackathon — 1st (STARK zk Coprocessor)"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2025</span><span class="rk t" data-ko="대상" data-en="Grand"></span><span class="nm t" data-ko="한국무역보험공사(K-SURE) 빅데이터 분석 공모전 대상" data-en="K-SURE Big-Data Analytics Competition — Grand Prize"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2025</span><span class="rk t" data-ko="우수상" data-en="Excel."></span><span class="nm t" data-ko="제23회 한국경제논문 공모전 우수상 (K-콘텐츠 CGE)" data-en="23rd Korea Economics Paper Competition — Excellence (K-content CGE)"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2025</span><span class="rk t" data-ko="은상" data-en="Silver"></span><span class="nm t" data-ko="한국디지털컨텐츠학회 하계학술대회 은상 (시그모이드 주가예측)" data-en="Korea Digital Contents Society Summer Conf. — Silver (Sigmoid prediction)"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2025</span><span class="rk">S2</span><span class="nm t" data-ko="WorldQuant Challenge Stage 2 진출" data-en="WorldQuant Challenge — Reached Stage 2"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2025</span><span class="rk t" data-ko="본선" data-en="Final"></span><span class="nm t" data-ko="어드벤텍코리아 AIoT 대회 본선 진출" data-en="Advantech Korea AIoT Competition — Finalist"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2024</span><span class="rk t" data-ko="최우수" data-en="Grand"></span><span class="nm t" data-ko="그로스톤 아이디어톤 최우수상" data-en="Growthon Ideathon — Grand Prize"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2024</span><span class="rk t" data-ko="우수상" data-en="Excel."></span><span class="nm t" data-ko="아그톤 우수상" data-en="Agthon — Excellence Award"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2024</span><span class="rk t" data-ko="본선" data-en="Final"></span><span class="nm t" data-ko="DB 갭스투자대회 본선 진출" data-en="DB Gaps Investment Competition — Finalist"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2023</span><span class="rk">TOP6</span><span class="nm t" data-ko="상명대-인하대 AWS 대회 Top 6" data-en="Sangmyung–Inha AWS Competition — Top 6"></span><span class="ld"></span></div>
+      <div class="aw"><span class="yr">2023</span><span class="rk t" data-ko="완주" data-en="Done"></span><span class="nm t" data-ko="CFA 리서치 챌린지 완주" data-en="CFA Research Challenge — Completed"></span><span class="ld"></span></div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" aria-label="Skills">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="역량" data-en="Skills"></span></p>
+      <h2 class="t" data-ko="스킬 매트릭스" data-en="Skill Matrix"></h2>
+    </div>
+    <div class="reveal">
+      <div class="skill"><div class="k t" data-ko="언어" data-en="Languages"></div><div class="v"><span>Python</span><span>C++</span></div></div>
+      <div class="skill"><div class="k t" data-ko="블록체인 · 온체인" data-en="Blockchain · On-chain"></div><div class="v"><span>Ethereum</span><span>Dune</span><span>DefiLlama</span><span>Stylus / Rust</span><span>Solidity</span><span>ZK / STARK</span><span class="t" data-ko="스테이블코인" data-en="Stablecoins"></span></div></div>
+      <div class="skill"><div class="k t" data-ko="데이터 · 리서치" data-en="Data · Research"></div><div class="v"><span class="t" data-ko="데이터 파이프라인" data-en="Data pipelines"></span><span class="t" data-ko="빅데이터" data-en="Big data"></span><span class="t" data-ko="퀀트" data-en="Quant"></span><span>CGE</span><span>Monte-Carlo</span><span class="t" data-ko="예측 모델링" data-en="Forecasting"></span></div></div>
+      <div class="skill"><div class="k t" data-ko="금융" data-en="Finance"></div><div class="v"><span class="t" data-ko="자산운용" data-en="Asset mgmt"></span><span class="t" data-ko="시장 리서치" data-en="Market research"></span><span class="t" data-ko="자동매매" data-en="Algo-trading"></span><span>13F</span></div></div>
+      <div class="skill"><div class="k t" data-ko="AI · 툴" data-en="AI · Tools"></div><div class="v"><span class="t" data-ko="머신러닝" data-en="Machine learning"></span><span class="t" data-ko="AI 에이전트·하네스" data-en="AI agents & harness"></span><span>LLM</span><span>MCP</span><span>Claude Code</span></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="edu" aria-label="Education">
+    <div class="sec-head reveal">
+      <p class="eyebrow"># <span class="t" data-ko="학력" data-en="Education"></span></p>
+      <h2 class="t" data-ko="학력 · 자격" data-en="Education &amp; Certification"></h2>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal">
+        <h3 class="t" data-ko="인하대학교" data-en="Inha University"></h3>
+        <p class="t" data-ko="컴퓨터공학과 학사 (재학) · 2023.03 – 현재 · 학점 3.96 / 4.5" data-en="B.S. Computer Engineering (in progress) · Mar 2023 – Present · GPA 3.96 / 4.5"></p>
+      </div>
+      <div class="card reveal">
+        <h3 class="t" data-ko="인하대 금융 인공지능 연구실" data-en="Inha Finance AI Lab"></h3>
+        <p class="t" data-ko="학부 연구생 · 2025.02 – 2025.07" data-en="Undergraduate Researcher · Feb 2025 – Jul 2025"></p>
+      </div>
+      <div class="card reveal">
+        <h3 class="t" data-ko="자격" data-en="Certification"></h3>
+        <p class="t" data-ko="투자자산운용사 (한국금융투자협회, 2025)" data-en="Certified Investment Manager (KOFIA, 2025)"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="contact" aria-label="Contact">
+    <div class="reveal">
+      <p class="eyebrow" style="text-align:center"># <span class="t" data-ko="연락처" data-en="Contact"></span></p>
+      <h2 style="margin-top:16px"><span class="t" data-ko="함께 " data-en="Let's build the "></span><span class="gold-text t" data-ko="금융의 미래" data-en="future of finance"></span><span class="t" data-ko="를 만들어요" data-en=" together"></span></h2>
+      <p class="t" data-ko="블록체인·금융·데이터 리서치, 협업, 채용 — 언제든 환영합니다." data-en="Blockchain · finance · data research, collaboration or hiring — always open."></p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:jimy12181218@gmail.com">jimy12181218@gmail.com</a>
+        <a class="btn btn-ghost" href="resume-bcg-bw.html" target="_blank" rel="noopener"><span class="t" data-ko="이력서 PDF" data-en="Résumé PDF"></span></a>
+      </div>
+      <div class="links">
+        <a href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://x.com/Drakos1218" target="_blank" rel="noopener">X ↗</a>
+        <a href="https://hanglestocks.tistory.com/" target="_blank" rel="noopener"><span class="t" data-ko="블로그" data-en="Blog"></span> ↗</a>
+        <a href="https://superjin1218.github.io/JinProfile/" target="_blank" rel="noopener"><span class="t" data-ko="포트폴리오" data-en="Portfolio"></span> ↗</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap fin">
+    <span class="t" data-ko="조진우 Jinwoo Cho · CS-Backed Future Financier" data-en="Jinwoo Cho · CS-Backed Future Financier"></span>
+    <span>© <span id="yr"></span> DRAKOS · Built on the Slash design system</span>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- bilingual ---------- */
+  var LKEY='drakos-lang';
+  var def=document.documentElement.getAttribute('data-default-lang')||'ko';
+  var lang=localStorage.getItem(LKEY)||def;
+  function applyLang(){
+    document.documentElement.lang=lang;
+    document.body.className='lang-'+lang;
+    document.querySelectorAll('.t').forEach(function(el){
+      if(el.dataset[lang]!=null) el.innerHTML=el.dataset[lang];
+    });
+    document.querySelectorAll('.toggle button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false');
+    });
+  }
+  document.querySelectorAll('.toggle button').forEach(function(b){
+    b.addEventListener('click',function(){lang=b.dataset.lang;localStorage.setItem(LKEY,lang);applyLang();});
+  });
+  applyLang();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* ---------- intro: two beats ---------- */
+  var intro=document.getElementById('intro');
+  var beats=intro.querySelectorAll('.beat');
+  var seen=sessionStorage.getItem('drakos-intro')==='1';
+  function endIntro(){
+    if(intro.classList.contains('done'))return;
+    intro.classList.add('done');
+    sessionStorage.setItem('drakos-intro','1');
+    setTimeout(function(){ intro.style.display='none'; },1100);
+    startReveals();
+  }
+  if(reduce || seen){
+    intro.style.display='none'; startReveals();
+  }else{
+    beats[0].classList.add('show');
+    setTimeout(function(){
+      beats[0].classList.remove('show'); beats[0].classList.add('out');
+      beats[1].classList.add('show');
+    },1900);
+    setTimeout(endIntro,4150);
+    intro.addEventListener('click',endIntro);
+    document.getElementById('introSkip').addEventListener('click',function(e){e.stopPropagation();endIntro();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'||e.key==='Enter')endIntro();},{once:true});
+    window.addEventListener('wheel',endIntro,{once:true,passive:true});
+    window.addEventListener('touchmove',endIntro,{once:true,passive:true});
+  }
+
+  /* ---------- word rotator ---------- */
+  var words=['FINANCE','QUANT','WEB3','IT','AI','DATA'];
+  var rot=document.getElementById('rot'), wi=0;
+  if(!reduce){
+    setInterval(function(){
+      wi=(wi+1)%words.length;
+      rot.classList.remove('swap'); void rot.offsetWidth;
+      rot.textContent=words[wi]; rot.classList.add('swap');
+    },1800);
+  }
+
+  /* ---------- chip wall stagger ---------- */
+  function startReveals(){
+    var chips=document.querySelectorAll('#chipwall .chip');
+    chips.forEach(function(c,i){
+      if(reduce){c.classList.add('in');c.style.opacity=1;return;}
+      setTimeout(function(){c.classList.add('in');}, 120+i*55);
+    });
+    if(reduce){
+      document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
+      return;
+    }
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){
+        if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    document.querySelectorAll('.reveal').forEach(function(e,i){
+      e.style.transitionDelay=Math.min(i%6*70,360)+'ms';
+      io.observe(e);
+    });
+    // hero reveals immediately
+    document.querySelectorAll('.hero .reveal').forEach(function(e){e.classList.add('in');});
+  }
+
+  /* ---------- research filter ---------- */
+  var fbtns=document.querySelectorAll('.filters button');
+  var projs=document.querySelectorAll('#workgrid .proj');
+  fbtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      fbtns.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      b.setAttribute('aria-pressed','true');
+      var f=b.dataset.f;
+      projs.forEach(function(p){
+        var show = f==='all' || (p.dataset.cat||'').indexOf(f)>-1;
+        p.classList.toggle('hide',!show);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

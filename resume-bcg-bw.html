@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko" data-default-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조진우 Jinwoo Cho — Resume &amp; Research · BCG Student Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000000; --paper:#ffffff;
+  --f:'Source Serif 4','Noto Serif KR',Georgia,'Times New Roman',serif;
+  --rule:1px solid #000;          /* all dividers */
+  --rule-strong:2px solid #000;   /* page / mini header only */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{size:A4;margin:0}
+html,body{background:#ffffff;font-family:var(--f);color:var(--ink)}
+body{display:flex;flex-direction:column;align-items:center;gap:18px;padding:20px;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+.bar{position:fixed;top:14px;right:18px;z-index:9;display:flex;gap:10px;align-items:center}
+.bar .hint{color:#000;font-size:12px;font-family:var(--f)}
+.toggle{display:flex;border:1px solid #000;border-radius:2px;overflow:hidden;font-size:12px;background:#fff}
+.toggle button{background:transparent;color:#000;border:0;font:inherit;letter-spacing:.12em;
+  padding:5px 12px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:#000;color:#fff}
+
+.sheet{
+  width:210mm;height:297mm;background:var(--paper);color:var(--ink);
+  padding:12mm 15mm 11mm 15mm;position:relative;overflow:hidden;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  display:flex;flex-direction:column;
+}
+a{color:inherit;text-decoration:none}
+
+/* ---------- page-1 header ---------- */
+.hd{text-align:center;border-bottom:var(--rule-strong);padding-bottom:6px;flex:0 0 auto}
+.hd .nm{font-size:26px;font-weight:700;letter-spacing:.04em;line-height:1}
+.hd .nm small{font-size:14px;font-weight:600;letter-spacing:.02em;margin-left:6px}
+.hd .ct{font-size:9px;letter-spacing:.02em;margin-top:5px}
+.hd .ct .sep{margin:0 7px}
+.hd .ob{font-size:8.4px;font-style:italic;margin-top:4px;line-height:1.28;
+  letter-spacing:-.004em;max-width:172mm;margin-left:auto;margin-right:auto}
+
+/* ---------- sections ---------- */
+.sec{margin-top:10px;flex:0 0 auto}
+.sec:first-of-type{margin-top:8px}
+.sh{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border-bottom:var(--rule);padding-bottom:2px;margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:baseline}
+.sh .hint2{font-size:7.6px;font-weight:600;letter-spacing:.04em;text-transform:none;font-style:italic}
+
+.en{margin-top:5px}
+.en:first-child{margin-top:1px}
+.er{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.er .l{font-size:9.8px;font-weight:700}
+.er .r{font-size:8.8px;font-weight:600;white-space:nowrap}
+.es{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:1px}
+.es .l{font-size:9px;font-style:italic}
+.es .r{font-size:8.5px;font-style:italic;white-space:nowrap}
+
+ul.b{list-style:none;margin:2px 0 0 0}
+ul.b li{position:relative;padding-left:13px;font-size:8.9px;line-height:1.32;
+  margin-top:1px;word-break:keep-all;overflow-wrap:break-word}
+ul.b li::before{content:"\25AA";position:absolute;left:0;top:-.5px;font-size:7px}
+ul.b li b{font-weight:700}
+
+/* awards — compact inline run */
+.awx{font-size:8.4px;line-height:1.66;margin-top:2px;word-break:keep-all}
+.awx .y{font-weight:700}
+.awx .d{margin:0 5px;font-weight:700}
+
+/* skills grid */
+.sk{margin-top:2px}
+.sk .row{display:grid;grid-template-columns:28mm 1fr;gap:6px;font-size:8.6px;
+  line-height:1.5;padding:1.5px 0}
+.sk .row .k{font-weight:700}
+
+/* selected-research list (page 1) — roomier, no link underline */
+.rl{margin-top:4px}
+.rl .i{display:grid;grid-template-columns:15px 1fr;gap:8px;padding:7px 0;
+  border-bottom:var(--rule)}
+.rl .i:last-child{border-bottom:0}
+.rl .i .no{font-size:9px;font-weight:700;padding-top:.5px}
+.rl .i .tx{font-size:8.9px;line-height:1.4;word-break:keep-all;overflow-wrap:break-word}
+.rl .i .tx b{font-weight:700}
+.rl .i .tx .ds{font-style:italic}
+.rl .i .lk{display:block;font-size:7.6px;margin-top:3px;text-decoration:none;
+  word-break:break-all;font-style:normal}
+
+/* ---------- research page 2 (all 9, merged) ---------- */
+.mh{border-bottom:var(--rule-strong);padding-bottom:6px;flex:0 0 auto}
+.mh .nm{font-size:15px;font-weight:700;letter-spacing:.03em}
+.mh .nm small{font-size:10px;font-weight:600;font-style:italic;margin-left:4px}
+
+.cards{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-between;
+  padding:9px 0 12mm 0}
+.rc{flex:0 0 auto}
+.rc + .rc{border-top:var(--rule);padding-top:9px}
+.rc .rh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.rc .rh .t{font-size:10.6px;font-weight:700}
+.rc .rh .t .no{margin-right:8px}
+.rc .rh .t .ttl{text-decoration:underline;text-underline-offset:2px}
+.rc .rh .tag{font-size:8.2px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  white-space:nowrap}
+.rc .topic{font-size:8.9px;font-style:italic;margin-top:4px;line-height:1.32;word-break:keep-all}
+.rc ul.b{margin-top:4px}
+.rc ul.b li{font-size:8.9px;line-height:1.38;margin-top:3px;padding-left:13px}
+.rc ul.b li::before{font-size:6.5px}
+.rc ul.b li .kk{font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+  font-size:7.9px;margin-right:5px}
+.rc .lnk{display:block;font-size:7.9px;margin-top:4px;text-decoration:none;word-break:break-all}
+
+/* footer */
+.ft{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;
+  justify-content:space-between;align-items:baseline;font-size:7.8px;
+  border-top:var(--rule);padding-top:4px;letter-spacing:.02em}
+.ft .pg{font-weight:700}
+
+@media print{
+  html,body{background:#fff}
+  body{padding:0;gap:0;display:block}
+  .bar{display:none!important}
+  .sheet{box-shadow:none;page-break-after:always;break-after:page}
+  .sheet:last-child{page-break-after:auto;break-after:auto}
+}
+@media screen{ .sheet{outline:1px solid #000} }
+</style>
+</head>
+<body class="lang-ko">
+
+<div class="bar">
+  <span class="hint t" data-ko="Ctrl+P → PDF로 저장 (여백 없음)" data-en="Ctrl+P → Save as PDF (no margins)"></span>
+  <div class="toggle" role="group" aria-label="Language">
+    <button data-lang="ko" aria-pressed="true">KO</button>
+    <button data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<!-- ============================ PAGE 1 — RESUME ============================ -->
+<div class="sheet">
+
+  <div class="hd">
+    <div class="nm t" data-ko="조진우<small>Jinwoo&nbsp;Cho</small>" data-en="Jinwoo Cho"></div>
+    <div class="ct">
+      <span><a href="mailto:jimy12181218@gmail.com">jimy12181218@gmail.com</a></span><span class="sep">|</span>
+      <span><a href="https://linkedin.com/in/heyjinwoo" target="_blank" rel="noopener">linkedin.com/in/heyjinwoo</a></span><span class="sep">|</span>
+      <span><a href="https://github.com/superjin1218" target="_blank" rel="noopener">github.com/superjin1218</a></span><span class="sep">|</span>
+      <span class="t" data-ko="근무가능 2026.05.25–08.21" data-en="Available 2026.05.25–08.21"></span><span class="sep">|</span>
+      <span>010-9175-9177</span>
+    </div>
+    <div class="ob t" data-ko="데이터 기반의 블록체인·금융 리서치와 구조화된 분석·문제 해결 역량을 보스턴컨설팅그룹에서 발휘할 수 있을 것이라 생각해 Student Researcher(인턴)에 지원합니다.<br>이 경험을 토대로 향후 BCG에서 리서처·컨설턴트로 장기적으로 성장하며 기여하고 싶습니다." data-en="Applying for the BCG Student Researcher (intern) role to bring data-driven blockchain/finance research and structured problem-solving to Boston Consulting Group.<br>Building on this experience, I aim to grow and contribute at BCG long-term as a researcher or consultant."></div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="sec">
+    <div class="sh"><span class="t" data-ko="학력" data-en="Education"></span></div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="인하대학교" data-en="Inha University"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="컴퓨터공학과 학사 (재학)" data-en="B.S. in Computer Engineering (in progress)"></div>
+        <div class="r t" data-ko="2023.03 – 현재" data-en="Mar 2023 – Present"></div>
+      </div>
+      <ul class="b">
+        <li class="t" data-ko="학점 3.96 / 4.5 · 투자자산운용사 (한국금융투자협회, 2025)" data-en="GPA 3.96 / 4.5 · Certified Investment Manager (KOFIA, 2025)"></li>
+        <li class="t" data-ko="주요 분야: 블록체인·온체인 분석, 퀀트·계량경제(CGE), 머신러닝, 데이터 파이프라인" data-en="Focus: blockchain/on-chain analysis, quant &amp; econometrics (CGE), machine learning, data pipelines"></li>
+      </ul>
+    </div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="인하대학교 금융 인공지능 연구실 (Inha AI-Finance Lab)" data-en="Finance AI Lab, Inha University"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="학부 연구생 · <a href='https://sites.google.com/view/inha-aif-lab' target='_blank' rel='noopener'>sites.google.com/view/inha-aif-lab</a>" data-en="Undergraduate Researcher · <a href='https://sites.google.com/view/inha-aif-lab' target='_blank' rel='noopener'>sites.google.com/view/inha-aif-lab</a>"></div>
+        <div class="r t" data-ko="2025.02 – 2025.07" data-en="Feb 2025 – Jul 2025"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="sec">
+    <div class="sh"><span class="t" data-ko="경력 · 활동" data-en="Experience"></span></div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="BLUENODE — 인하대학교 블록체인학회" data-en="BLUENODE — Inha University Blockchain Society"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="리서치 팀 리드 · 온보딩 팀 리드" data-en="Research Team Lead &amp; Onboarding Team Lead"></div>
+        <div class="r t" data-ko="2026.01 – 현재" data-en="Jan 2026 – Present"></div>
+      </div>
+      <ul class="b">
+        <li class="t" data-ko="리서치·온보딩 팀을 이끌며 BLUENODE의 리서치 방향과 산출물 품질을 총괄" data-en="Lead the research &amp; onboarding teams; own BLUENODE's research direction and output quality"></li>
+      </ul>
+    </div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="StockTalk Inha — 인하대 주식 오픈채팅" data-en="StockTalk Inha — Inha stock open-chat"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="설립 · 운영" data-en="Founder &amp; Operator"></div>
+        <div class="r t" data-ko="2024 – 현재" data-en="2024 – Present"></div>
+      </div>
+      <ul class="b">
+        <li class="t" data-ko="커뮤니티 670명+ 규모로 성장" data-en="Grew the community to 670+ members"></li>
+      </ul>
+    </div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="인천부광고등학교" data-en="Incheon Bugwang High School"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="블록체인 교육 조교" data-en="Blockchain Teaching Assistant"></div>
+        <div class="r t" data-ko="2026.04 – 현재" data-en="Apr 2026 – Present"></div>
+      </div>
+    </div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="인천연합주식동아리 I.T.T" data-en="I.T.T — Incheon Inter-University Stock Club"></div>
+        <div class="r t" data-ko="인천, 대한민국" data-en="Incheon, Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="3팀 팀장" data-en="Team 3 Lead"></div>
+        <div class="r t" data-ko="2025.03 – 2025.12" data-en="Mar 2025 – Dec 2025"></div>
+      </div>
+    </div>
+    <div class="en">
+      <div class="er">
+        <div class="l t" data-ko="대한민국 공군" data-en="Republic of Korea Air Force"></div>
+        <div class="r t" data-ko="대한민국" data-en="Korea"></div>
+      </div>
+      <div class="es">
+        <div class="l t" data-ko="운전병 · 병장 만기전역" data-en="Vehicle Operator · Discharged as Sergeant"></div>
+        <div class="r t" data-ko="2021 – 2023" data-en="2021 – 2023"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HONORS & AWARDS -->
+  <div class="sec">
+    <div class="sh"><span class="t" data-ko="수상" data-en="Honors &amp; Awards"></span></div>
+    <div class="awx">
+      <span class="y">2026</span> <span class="t" data-ko="Arbitrum Mini Hackathon 1위 (STARK zk Coprocessor)" data-en="Arbitrum Mini Hackathon 1st (STARK zk Coprocessor)"></span><span class="d">·</span>
+      <span class="y">2025</span> <span class="t" data-ko="한국무역보험공사(K-SURE) 빅데이터 분석 공모전 대상" data-en="K-SURE Big-Data Analytics — Grand Prize"></span><span class="d">·</span>
+      <span class="y">2025</span> <span class="t" data-ko="제23회 한국경제논문 공모전 우수상 (K-콘텐츠 CGE)" data-en="23rd Korea Economics Paper Competition — Excellence (K-content CGE)"></span><span class="d">·</span>
+      <span class="y">2025</span> <span class="t" data-ko="한국디지털컨텐츠학회 하계학술대회 은상" data-en="Korea Digital Contents Society Summer Conf. — Silver"></span><span class="d">·</span>
+      <span class="y">2025</span> <span class="t" data-ko="WorldQuant Challenge Stage 2 진출" data-en="WorldQuant Challenge — Stage 2"></span><span class="d">·</span>
+      <span class="y">2025</span> <span class="t" data-ko="어드벤텍코리아 AIoT 대회 본선" data-en="Advantech Korea AIoT — Finalist"></span><span class="d">·</span>
+      <span class="y">2024</span> <span class="t" data-ko="그로스톤 아이디어톤 최우수상" data-en="Growthon Ideathon — Grand Prize"></span><span class="d">·</span>
+      <span class="y">2024</span> <span class="t" data-ko="아그톤 우수상" data-en="Agthon — Excellence"></span><span class="d">·</span>
+      <span class="y">2024</span> <span class="t" data-ko="DB 갭스투자대회 본선" data-en="DB Gaps Investment — Finalist"></span><span class="d">·</span>
+      <span class="y">2023</span> <span class="t" data-ko="상명대-인하대 AWS 대회 Top 6" data-en="Sangmyung–Inha AWS — Top 6"></span><span class="d">·</span>
+      <span class="y">2023</span> <span class="t" data-ko="CFA 리서치 챌린지 완주" data-en="CFA Research Challenge — Completed"></span>
+    </div>
+  </div>
+
+  <!-- SKILLS & ADDITIONAL -->
+  <div class="sec">
+    <div class="sh"><span class="t" data-ko="역량 · 기타" data-en="Skills &amp; Additional"></span></div>
+    <div class="sk">
+      <div class="row"><div class="k t" data-ko="언어" data-en="Languages"></div><div class="v">Python, C++</div></div>
+      <div class="row"><div class="k t" data-ko="블록체인·온체인" data-en="Blockchain · On-chain"></div><div class="v t" data-ko="Ethereum, Dune, DefiLlama, 온체인 데이터 분석, 스테이블코인" data-en="Ethereum, Dune, DefiLlama, on-chain data analysis, stablecoins"></div></div>
+      <div class="row"><div class="k t" data-ko="데이터·리서치" data-en="Data · Research"></div><div class="v t" data-ko="데이터 파이프라인, 빅데이터, 퀀트, CGE, 예측모델" data-en="Data pipelines, big data, quant, CGE, forecasting"></div></div>
+      <div class="row"><div class="k t" data-ko="금융 · AI" data-en="Finance · AI"></div><div class="v t" data-ko="자산운용, 시장 리서치, 자동매매 · 머신러닝, AI 에이전트·하네스, LLM &amp; MCP 활용 경험 다수" data-en="Asset management, market research, algo-trading · ML, AI agents/harness, extensive LLM &amp; MCP experience"></div></div>
+      <div class="row"><div class="k t" data-ko="기타" data-en="Additional"></div><div class="v t" data-ko="투자자산운용사 (KOFIA, 2025) · 공군 병장 만기전역 (2021–2023)" data-en="Certified Investment Manager (KOFIA, 2025) · ROK Air Force, Sergeant, service completed (2021–2023)"></div></div>
+    </div>
+  </div>
+
+  <!-- SELECTED RESEARCH (all 9 + links) -->
+  <div class="sec">
+    <div class="sh"><span class="t" data-ko="블록체인 리서치 활동" data-en="Blockchain Research Activities"></span><span class="hint2 t" data-ko="상세 설명은 2페이지" data-en="details on p. 2"></span></div>
+    <div class="rl">
+      <div class="i"><div class="no">01</div><div class="tx">
+        <b class="t" data-ko="x402 결제리스크 보장보험 &amp; LLM 공격 에이전트" data-en="x402 Payment-Risk Insurance &amp; LLM Attack Agent"></b>
+        <span class="ds t" data-ko=" — LLM 기반 AI 공격 에이전트를 설계하고 EIP-8003으로 x402 결제 리스크를 보장하는 보험 구상." data-en=" — Designed an LLM-based AI attack agent and an insurance product covering x402 payment risk via EIP-8003."></span>
+        <a class="lk" href="https://drive.google.com/file/d/1QBu2g5MNHgGPfqteeq4ImjBN0ytXp1iy/view" target="_blank" rel="noopener">drive.google.com/file/d/1QBu2g5MNHgGPfqteeq4ImjBN0ytXp1iy/view</a>
+      </div></div>
+      <div class="i"><div class="no">02</div><div class="tx">
+        <b class="t" data-ko="K-Onchain Repo 시장" data-en="K-Onchain Repo Market"></b>
+        <span class="ds t" data-ko=" — 국내 단기자금시장(Repo·환매조건부채권)을 온체인으로 옮긴 시장 구조 구상." data-en=" — A concept migrating Korea's short-term funding market (repo/RP) on-chain."></span>
+        <a class="lk" href="https://drive.google.com/file/d/1xg-MrQOMHZtQsNxeSA9s5sbZdXKPlxOs/view" target="_blank" rel="noopener">drive.google.com/file/d/1xg-MrQOMHZtQsNxeSA9s5sbZdXKPlxOs/view</a>
+      </div></div>
+      <div class="i"><div class="no">03</div><div class="tx">
+        <b class="t" data-ko="비트코인 백서 상세 분석" data-en="Bitcoin Whitepaper — Deep Analysis"></b>
+        <span class="ds t" data-ko=" — 사토시 백서를 작업증명·타임스탬프·합의·UTXO까지 예시로 풀어낸 온보딩 해설." data-en=" — An onboarding-grade explainer of Satoshi's whitepaper (PoW, timestamp, consensus, UTXO)."></span>
+        <a class="lk" href="https://hanglestocks.tistory.com/138" target="_blank" rel="noopener">hanglestocks.tistory.com/138</a>
+      </div></div>
+      <div class="i"><div class="no">04</div><div class="tx">
+        <b class="t" data-ko="Arbitrum Mini Hackathon — STARK zk Coprocessor (1위)" data-en="Arbitrum Mini Hackathon — STARK zk Coprocessor (1st)"></b>
+        <span class="ds t" data-ko=" — Stylus(Rust/WASM)로 Poseidon·Merkle·STARK 검증 구현, Solidity 대비 가스 벤치마크." data-en=" — Poseidon/Merkle/STARK verification in Stylus (Rust/WASM), gas-benchmarked vs Solidity."></span>
+        <a class="lk" href="https://github.com/superjin1218/starkverifier" target="_blank" rel="noopener">github.com/superjin1218/starkverifier</a>
+      </div></div>
+      <div class="i"><div class="no">05</div><div class="tx">
+        <b class="t" data-ko="RWA 기반 블록체인 팩토링" data-en="RWA-based Blockchain Factoring"></b>
+        <span class="ds t" data-ko=" — 실물 매출채권을 토큰화해 온체인에서 팩토링하는 RWA 구조금융 설계." data-en=" — On-chain factoring of tokenized real-world receivables (RWA structured finance)."></span>
+        <a class="lk" href="https://drive.google.com/file/d/1C3rAW4sV6jALgqVdFfJWazPTCQdRs00G/view" target="_blank" rel="noopener">drive.google.com/file/d/1C3rAW4sV6jALgqVdFfJWazPTCQdRs00G/view</a>
+      </div></div>
+      <div class="i"><div class="no">06</div><div class="tx">
+        <b class="t" data-ko="토스(Toss) 자체 L1 전략 분석" data-en="Toss Own-L1 Strategy Analysis"></b>
+        <span class="ds t" data-ko=" — 토스의 자체 L1 블록체인 진출 전략을 시장·기술 양면에서 분석·제언." data-en=" — Market + technical analysis and recommendations on Toss launching its own L1."></span>
+        <a class="lk" href="https://drive.google.com/file/d/1UrKtpdbaH4kS2r7J0gdySmLxr42CFZxO/view" target="_blank" rel="noopener">drive.google.com/file/d/1UrKtpdbaH4kS2r7J0gdySmLxr42CFZxO/view</a>
+      </div></div>
+      <div class="i"><div class="no">07</div><div class="tx">
+        <b class="t" data-ko="신뢰의 공백과 비트코인" data-en="The Void of Trust and Bitcoin"></b>
+        <span class="ds t" data-ko=" — 금→달러→비트코인으로 이어지는 ‘화폐 신뢰의 기반’ 이전을 다룬 통화사 에세이." data-en=" — A monetary-history essay on the trust shift from gold to the dollar to Bitcoin."></span>
+        <a class="lk" href="https://medium.com/@seyunjeong158/%EC%8B%A0%EB%A2%B0%EC%9D%98-%EA%B3%B5%EB%B0%B1%EA%B3%BC-%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-0dbfda5972ca" target="_blank" rel="noopener">medium.com/@seyunjeong158 · 신뢰의 공백과 비트코인</a>
+      </div></div>
+      <div class="i"><div class="no">08</div><div class="tx">
+        <b class="t" data-ko="Trustless DeFi 트레이딩 에이전트 검증" data-en="Trustless DeFi Trading-Agent Verification"></b>
+        <span class="ds t" data-ko=" — STARK를 트레이딩 에이전트 검증에 적용해 SNARK 대비 속도 우위를 입증·시연." data-en=" — Applied STARK to trading-agent verification, proving a speed advantage over SNARK."></span>
+        <a class="lk" href="https://drive.google.com/file/d/1Uob-Y7LN-tRjcVZFlOFRBI2HTdAmn3J8/view" target="_blank" rel="noopener">drive.google.com/file/d/1Uob-Y7LN-tRjcVZFlOFRBI2HTdAmn3J8/view</a>
+      </div></div>
+      <div class="i"><div class="no">09</div><div class="tx">
+        <b class="t" data-ko="USDC vs USDT 온체인 분석" data-en="USDC vs USDT On-chain Analysis"></b>
+        <span class="ds t" data-ko=" — 발행량·시가총액·온체인 거래활동을 비교한 대시보드 (90일 순발행·성장 USDC 우위, 거래량 USDT 우위)." data-en=" — A dashboard comparing issuance, market cap and on-chain activity (USDC leads 90-day growth, USDT leads volume)."></span>
+        <a class="lk" href="https://usd-tvs-usdc.vercel.app/" target="_blank" rel="noopener">usd-tvs-usdc.vercel.app</a>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="ft">
+    <span class="t" data-ko="조진우 Jinwoo Cho · BCG Student Researcher 지원" data-en="Jinwoo Cho · Application for BCG Student Researcher"></span>
+    <span class="pg t" data-ko="1 / 2 페이지" data-en="Page 1 / 2"></span>
+  </div>
+</div>
+
+<!-- ================= PAGE 2 — RESEARCH 01–09 (merged) ================= -->
+<div class="sheet">
+  <div class="mh">
+    <div class="nm"><span class="t" data-ko="조진우 Jinwoo Cho" data-en="Jinwoo Cho"></span><small class="t" data-ko="— 블록체인 리서치 활동 (무엇을 / 어떤 방식으로)" data-en="— Blockchain Research Activities (what / how)"></small></div>
+  </div>
+
+  <div class="cards">
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">01</span><span class="ttl t" data-ko="x402 결제리스크 보장보험 &amp; LLM 공격 에이전트" data-en="x402 Payment-Risk Insurance &amp; LLM Attack Agent"></span></div>
+        <div class="tag t" data-ko="구상 · 설계" data-en="Concept · Design"></div>
+      </div>
+      <div class="topic t" data-ko="에이전트·머신 결제 프로토콜(x402)의 결제 리스크를 온체인 보험으로 보장하는 상품 구조 설계." data-en="A product structure that insures payment risk in the x402 (agent/machine payment) protocol on-chain."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="x402 결제 흐름의 실패·악용 시나리오와 보장범위·트리거·정산 구조, EIP-8003 활용 방안." data-en="x402 failure/abuse scenarios, plus coverage, triggers and settlement leveraging EIP-8003."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="LLM 기반 AI 공격 에이전트로 취약 시나리오를 도출하고 그 리스크를 EIP-8003 보험 구조로 매핑." data-en="Built an LLM-based attack agent to surface vulnerable scenarios, then mapped the risks onto an EIP-8003 insurance structure."></span></li>
+      </ul>
+      <a class="lnk" href="https://drive.google.com/file/d/1QBu2g5MNHgGPfqteeq4ImjBN0ytXp1iy/view" target="_blank" rel="noopener">drive.google.com/file/d/1QBu2g5MNHgGPfqteeq4ImjBN0ytXp1iy/view</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">02</span><span class="ttl t" data-ko="K-Onchain Repo 시장" data-en="K-Onchain Repo Market"></span></div>
+        <div class="tag t" data-ko="구상 · 설계" data-en="Concept · Design"></div>
+      </div>
+      <div class="topic t" data-ko="국내 단기자금시장(Repo·환매조건부채권)을 온체인으로 옮긴 시장 구조 설계." data-en="A market structure that migrates Korea's short-term funding market (repo/RP) on-chain."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="한국 Repo·콜 시장의 거래·담보·청산 메커니즘과 온체인화 시 구조·금리·리스크." data-en="Trade/collateral/settlement mechanics of Korea's repo/call market and the structure, pricing and risks of going on-chain."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="오프체인 RP 거래를 단계별로 분해해 담보·만기·환매·금리 산정을 스마트컨트랙트 로직으로 매핑." data-en="Decomposed the off-chain RP transaction and mapped collateral, maturity, repurchase and rate-setting onto smart-contract logic."></span></li>
+      </ul>
+      <a class="lnk" href="https://drive.google.com/file/d/1xg-MrQOMHZtQsNxeSA9s5sbZdXKPlxOs/view" target="_blank" rel="noopener">drive.google.com/file/d/1xg-MrQOMHZtQsNxeSA9s5sbZdXKPlxOs/view</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">03</span><span class="ttl t" data-ko="비트코인 백서 상세 분석" data-en="Bitcoin Whitepaper — Deep Analysis"></span></div>
+        <div class="tag t" data-ko="해설 · 교육" data-en="Article · Education"></div>
+      </div>
+      <div class="topic t" data-ko="사토시 백서를 작업증명·타임스탬프·합의·UTXO까지 예시로 풀어낸 온보딩용 해설." data-en="An onboarding-grade explainer of Satoshi's whitepaper covering PoW, timestamping, consensus and UTXO."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="백서의 핵심 메커니즘 — 작업증명, 타임스탬프 체인, 합의, 이중지불 방지, UTXO 모델." data-en="The paper's core mechanisms — PoW, timestamp chain, consensus, double-spend prevention, UTXO."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="원문을 단락별로 분해하고 비전공자용 예시·도식으로 재구성해 교육용 해설로 작성·공개." data-en="Decomposed the original paragraph by paragraph, rebuilt with accessible examples, published as an explainer."></span></li>
+      </ul>
+      <a class="lnk" href="https://hanglestocks.tistory.com/138" target="_blank" rel="noopener">hanglestocks.tistory.com/138</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">04</span><span class="ttl t" data-ko="Arbitrum Mini Hackathon — STARK zk Coprocessor" data-en="Arbitrum Mini Hackathon — STARK zk Coprocessor"></span></div>
+        <div class="tag t" data-ko="수상 · 2026 (1위)" data-en="Award · 2026 (1st)"></div>
+      </div>
+      <div class="topic t" data-ko="Stylus(Rust/WASM)로 STARK 검증을 온체인에서 수행하는 zk coprocessor 구현 — 해커톤 1위." data-en="An on-chain zk coprocessor performing STARK verification, built in Stylus (Rust/WASM) — 1st place."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="Poseidon 해시·Merkle·STARK 검증을 온체인에서 수행할 때의 실현 가능성과 가스 효율." data-en="Feasibility and gas efficiency of running Poseidon-hash / Merkle / STARK verification on-chain."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="Stylus(Rust→WASM)로 검증기를 구현하고 동일 로직 Solidity 대비 가스를 벤치마크해 우위를 정량 입증." data-en="Implemented verifiers in Stylus (Rust→WASM) and gas-benchmarked vs an equivalent Solidity build, quantifying the advantage."></span></li>
+      </ul>
+      <a class="lnk" href="https://github.com/superjin1218/starkverifier" target="_blank" rel="noopener">github.com/superjin1218/starkverifier</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">05</span><span class="ttl t" data-ko="RWA 기반 블록체인 팩토링" data-en="RWA-based Blockchain Factoring"></span></div>
+        <div class="tag t" data-ko="구상 · 설계" data-en="Concept · Design"></div>
+      </div>
+      <div class="topic t" data-ko="실물 매출채권을 토큰화해 온체인에서 팩토링하는 RWA 구조금융 설계안." data-en="A structured-finance design that tokenizes real-world receivables and factors them on-chain (RWA)."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="매출채권 팩토링의 자금흐름·신용 리스크와 이를 토큰화 + 온체인 자금조달로 재구성하는 구조." data-en="Cash-flow and credit risk of receivables factoring, recomposed via tokenization and on-chain funding."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="오프체인 팩토링 거래를 분해해 토큰화·검증·자금풀·상환 흐름을 온체인 구조로 단계별 설계." data-en="Decomposed an off-chain factoring deal and designed the on-chain flow of tokenization, verification, funding pool and repayment."></span></li>
+      </ul>
+      <a class="lnk" href="https://drive.google.com/file/d/1C3rAW4sV6jALgqVdFfJWazPTCQdRs00G/view" target="_blank" rel="noopener">drive.google.com/file/d/1C3rAW4sV6jALgqVdFfJWazPTCQdRs00G/view</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">06</span><span class="ttl t" data-ko="토스(Toss) 자체 L1 전략 분석" data-en="Toss Own-L1 Strategy Analysis"></span></div>
+        <div class="tag t" data-ko="분석 · 제언" data-en="Analysis · Recommendation"></div>
+      </div>
+      <div class="topic t" data-ko="토스의 자체 L1 블록체인 진출 전략을 시장·기술 양면에서 분석하고 제언." data-en="A market and technical analysis and recommendation on Toss's strategy to launch its own L1."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="토스가 자체 L1을 출시할 때의 시장 포지셔닝, 기술 선택지, 사업·규제 리스크." data-en="Market positioning, technical options and business/regulatory risks if Toss launches its own L1."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="경쟁 체인·스테이블코인·결제 시장과 L1 아키텍처를 양면 분석해 전략 시나리오·제언 도출." data-en="Analyzed competing chains, stablecoins and payments alongside L1 architecture to derive scenarios and recommendations."></span></li>
+      </ul>
+      <a class="lnk" href="https://drive.google.com/file/d/1UrKtpdbaH4kS2r7J0gdySmLxr42CFZxO/view" target="_blank" rel="noopener">drive.google.com/file/d/1UrKtpdbaH4kS2r7J0gdySmLxr42CFZxO/view</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">07</span><span class="ttl t" data-ko="신뢰의 공백과 비트코인" data-en="The Void of Trust and Bitcoin"></span></div>
+        <div class="tag t" data-ko="에세이 · 매크로" data-en="Essay · Macro"></div>
+      </div>
+      <div class="topic t" data-ko="‘화폐 신뢰의 기반’ 관점에서 금→달러→비트코인 신뢰 이전을 분석한 통화사 에세이." data-en="A monetary-history essay tracing the transfer of monetary trust from gold to the dollar to Bitcoin."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="금본위제→브레튼우즈→페트로달러→미국 전략적 비트코인 비축으로 이어지는 ‘신뢰의 닻’ 이전 구조." data-en="The shifting ‘anchor of trust’ from gold to Bretton Woods to the petrodollar to the U.S. strategic BTC reserve."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="공개 데이터(IMF COFER, 美 부채, 중국 美국채, 스테이블코인 T-bill, BITCOIN Act)를 근거로 한 데이터 기반 논증으로 가설·시나리오 도출." data-en="A data-grounded argument built on public data (IMF COFER, U.S. debt, China's UST, stablecoin T-bills, BITCOIN Act), deriving a hypothesis and scenario."></span></li>
+      </ul>
+      <a class="lnk" href="https://medium.com/@seyunjeong158/%EC%8B%A0%EB%A2%B0%EC%9D%98-%EA%B3%B5%EB%B0%B1%EA%B3%BC-%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-0dbfda5972ca" target="_blank" rel="noopener">medium.com/@seyunjeong158 · 신뢰의 공백과 비트코인</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">08</span><span class="ttl t" data-ko="Trustless DeFi 트레이딩 에이전트 검증" data-en="Trustless DeFi Trading-Agent Verification"></span></div>
+        <div class="tag t" data-ko="구상 · 시연" data-en="Concept · Demo"></div>
+      </div>
+      <div class="topic t" data-ko="트레이딩 에이전트의 동작을 무신뢰로 증명하는 검증에 STARK를 적용해 SNARK 대비 속도 우위를 입증." data-en="Applying STARK to trustless verification of a trading agent's behavior, proving a speed advantage over SNARK."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="에이전트가 규칙대로 동작했음을 신뢰 없이 증명하는 검증 구조와 STARK vs SNARK 성능." data-en="A verification structure proving — without trust — that an agent acted according to the rules, plus a STARK-vs-SNARK performance comparison."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="에이전트 실행을 STARK 회로로 검증하도록 설계하고 SNARK 대비 증명 생성 속도를 벤치마크해 시연." data-en="Designed the agent's execution to be verified by a STARK circuit and benchmarked proof speed against SNARK."></span></li>
+      </ul>
+      <a class="lnk" href="https://drive.google.com/file/d/1Uob-Y7LN-tRjcVZFlOFRBI2HTdAmn3J8/view" target="_blank" rel="noopener">drive.google.com/file/d/1Uob-Y7LN-tRjcVZFlOFRBI2HTdAmn3J8/view</a>
+    </div>
+
+    <div class="rc">
+      <div class="rh">
+        <div class="t"><span class="no">09</span><span class="ttl t" data-ko="USDC vs USDT 온체인 분석" data-en="USDC vs USDT On-chain Analysis"></span></div>
+        <div class="tag t" data-ko="대시보드 · 데이터" data-en="Dashboard · Data"></div>
+      </div>
+      <div class="topic t" data-ko="USDC·USDT의 발행량·시장규모·온체인 거래활동을 비교하는 대시보드." data-en="A dashboard comparing USDC and USDT by issuance, market size and on-chain activity."></div>
+      <ul class="b">
+        <li><span class="kk t" data-ko="리서치" data-en="Focus"></span><span class="t" data-ko="두 스테이블코인의 순발행·시가총액·성장률·온체인 거래량 비교." data-en="Net issuance, market cap, growth rate and on-chain volume of the two stablecoins."></span></li>
+        <li><span class="kk t" data-ko="방식" data-en="Method"></span><span class="t" data-ko="온체인 데이터를 수집·집계해 지표 대시보드 구축. 90일 순발행·성장은 USDC, 절대 거래량은 USDT 우위로 분석." data-en="Built a metrics dashboard from aggregated on-chain data; USDC leads 90-day net issuance &amp; growth, USDT leads absolute volume."></span></li>
+      </ul>
+      <a class="lnk" href="https://usd-tvs-usdc.vercel.app/" target="_blank" rel="noopener">usd-tvs-usdc.vercel.app</a>
+    </div>
+  </div>
+
+  <div class="ft">
+    <span class="t" data-ko="조진우 Jinwoo Cho · BCG Student Researcher 지원" data-en="Jinwoo Cho · Application for BCG Student Researcher"></span>
+    <span class="pg t" data-ko="2 / 2 페이지" data-en="Page 2 / 2"></span>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY='resume-bcg-bw-lang', def=document.documentElement.getAttribute('data-default-lang')||'ko';
+  var qp=new URLSearchParams(location.search).get('lang');
+  var lang=(qp==='en'||qp==='ko')?qp:(localStorage.getItem(KEY)||def);
+  function apply(){
+    document.documentElement.lang=lang;
+    document.body.className='lang-'+lang;
+    document.querySelectorAll('.t').forEach(function(el){ if(el.dataset[lang]!=null) el.innerHTML=el.dataset[lang]; });
+    document.querySelectorAll('.toggle button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang===lang?'true':'false'); });
+  }
+  document.querySelectorAll('.toggle button').forEach(function(b){
+    b.addEventListener('click',function(){ lang=b.dataset.lang; localStorage.setItem(KEY,lang); apply(); });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>
