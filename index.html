@@ -271,7 +271,7 @@ section{padding:var(--sec) 0}
   border-radius:var(--radius-full);padding:8px 12px;text-align:center}
 
 /* ---------- ribbon divider (inline SVG) ---------- */
-.ribbon{display:block;width:100%;height:54px;opacity:.55;margin:6px 0}
+.ribbon{display:block;width:100%;height:64px;opacity:.9;margin:14px 0;overflow:visible}
 
 /* ---------- cards / grids ---------- */
 .grid{display:grid;gap:18px}
@@ -504,13 +504,26 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
     </div>
   </section>
 
-  <svg class="ribbon" viewBox="0 0 1200 54" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="ribbon" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
     <defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#ae9357" stop-opacity="0"/><stop offset=".4" stop-color="#fff0cc"/>
       <stop offset=".7" stop-color="#cc9166"/><stop offset="1" stop-color="#ae9357" stop-opacity="0"/>
     </linearGradient></defs>
-    <path d="M0 40 C 220 6 360 6 600 30 S 980 54 1200 16" fill="none" stroke="url(#gold)" stroke-width="1.4"/>
-    <path d="M0 48 C 260 20 420 20 600 38 S 1000 60 1200 28" fill="none" stroke="url(#gold)" stroke-width="1" opacity=".5"/>
+    <g>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-1440 0" dur="9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" additive="sum" values="0 0;0 3;0 0;0 -3;0 0" keyTimes="0;0.25;0.5;0.75;1" dur="5s" repeatCount="indefinite"/>
+      <path d="M0 32 Q120 6 240 32 Q360 58 480 32 Q600 6 720 32 Q840 58 960 32 Q1080 6 1200 32 Q1320 58 1440 32 Q1560 6 1680 32 Q1800 58 1920 32 Q2040 6 2160 32 Q2280 58 2400 32 Q2520 6 2640 32 Q2760 58 2880 32" fill="none" stroke="url(#gold)" stroke-width="1.6"/>
+    </g>
+    <g opacity=".55">
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-1440 0" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" additive="sum" values="0 0;0 -2;0 0;0 2;0 0" keyTimes="0;0.25;0.5;0.75;1" dur="7s" repeatCount="indefinite"/>
+      <path d="M0 32 Q90 16 180 32 Q270 48 360 32 Q450 16 540 32 Q630 48 720 32 Q810 16 900 32 Q990 48 1080 32 Q1170 16 1260 32 Q1350 48 1440 32 Q1530 16 1620 32 Q1710 48 1800 32 Q1890 16 1980 32 Q2070 48 2160 32 Q2250 16 2340 32 Q2430 48 2520 32 Q2610 16 2700 32 Q2790 48 2880 32" fill="none" stroke="url(#gold)" stroke-width="1.1"/>
+    </g>
+    <g opacity=".32">
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-1440 0" dur="19s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" additive="sum" values="0 0;0 4;0 0;0 -4;0 0" keyTimes="0;0.25;0.5;0.75;1" dur="9s" repeatCount="indefinite"/>
+      <path d="M0 32 Q180 54 360 32 Q540 10 720 32 Q900 54 1080 32 Q1260 10 1440 32 Q1620 54 1800 32 Q1980 10 2160 32 Q2340 54 2520 32 Q2700 10 2880 32" fill="none" stroke="url(#gold)" stroke-width="1"/>
+    </g>
   </svg>
 
   <!-- ===================== PROFILE ===================== -->
@@ -933,6 +946,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){ var _rb=document.querySelector('.ribbon'); if(_rb && _rb.pauseAnimations) _rb.pauseAnimations(); }
 
   /* ---------- bilingual ---------- */
   var LKEY='drakos-lang';
