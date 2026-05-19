@@ -491,7 +491,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
         </div>
         <div class="cta reveal">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener"><span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
-          <a class="btn btn-ghost" href="resume-bcg-bw.html" target="_blank" rel="noopener"><span class="t" data-ko="이력서 PDF" data-en="Résumé PDF"></span></a>
+          <a class="btn btn-ghost pdfdl" href="resume-bcg-bw-ko.pdf" download="Jinwoo_Cho_Resume_KO.pdf" rel="noopener"><span class="t" data-ko="이력서 PDF ↓" data-en="Résumé PDF ↓"></span></a>
           <a class="btn btn-ghost" href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
@@ -923,7 +923,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
       <p class="t" data-ko="블록체인·금융·데이터 리서치, 협업, 채용 — 언제든 환영합니다." data-en="Blockchain · finance · data research, collaboration or hiring — always open."></p>
       <div class="cta">
         <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener"><span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
-        <a class="btn btn-ghost" href="resume-bcg-bw.html" target="_blank" rel="noopener"><span class="t" data-ko="이력서 PDF" data-en="Résumé PDF"></span></a>
+        <a class="btn btn-ghost pdfdl" href="resume-bcg-bw-ko.pdf" download="Jinwoo_Cho_Resume_KO.pdf" rel="noopener"><span class="t" data-ko="이력서 PDF ↓" data-en="Résumé PDF ↓"></span></a>
       </div>
       <div class="links">
         <a href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
@@ -961,6 +961,10 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
     });
     document.querySelectorAll('.toggle button').forEach(function(b){
       b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false');
+    });
+    document.querySelectorAll('.pdfdl').forEach(function(a){
+      a.setAttribute('href','resume-bcg-bw-'+lang+'.pdf');
+      a.setAttribute('download','Jinwoo_Cho_Resume_'+lang.toUpperCase()+'.pdf');
     });
   }
   document.querySelectorAll('.toggle button').forEach(function(b){

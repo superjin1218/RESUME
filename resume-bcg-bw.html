@@ -63,7 +63,7 @@ a{color:inherit;text-decoration:none}
 
 ul.b{list-style:none;margin:2px 0 0 0}
 ul.b li{position:relative;padding-left:13px;font-size:8.9px;line-height:1.32;
-  margin-top:1px;word-break:keep-all;overflow-wrap:break-word}
+  margin-top:1px;word-break:keep-all;overflow-wrap:normal;hyphens:none}
 ul.b li::before{content:"\25AA";position:absolute;left:0;top:-.5px;font-size:7px}
 ul.b li b{font-weight:700}
 
@@ -84,7 +84,7 @@ ul.b li b{font-weight:700}
   border-bottom:var(--rule)}
 .rl .i:last-child{border-bottom:0}
 .rl .i .no{font-size:9px;font-weight:700;padding-top:.5px}
-.rl .i .tx{font-size:8.9px;line-height:1.4;word-break:keep-all;overflow-wrap:break-word}
+.rl .i .tx{font-size:8.9px;line-height:1.4;word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .rl .i .tx b{font-weight:700}
 .rl .i .tx .ds{font-style:italic}
 .rl .i .lk{display:block;font-size:7.6px;margin-top:3px;text-decoration:none;
@@ -105,19 +105,13 @@ ul.b li b{font-weight:700}
 .rc .rh .t .ttl{text-decoration:underline;text-underline-offset:2px}
 .rc .rh .tag{font-size:8.2px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
   white-space:nowrap}
-.rc .topic{font-size:8.9px;font-style:italic;margin-top:4px;line-height:1.32;word-break:keep-all}
+.rc .topic{font-size:8.9px;font-style:italic;margin-top:4px;line-height:1.32;word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .rc ul.b{margin-top:4px}
-.rc ul.b li{font-size:8.9px;line-height:1.38;margin-top:3px;padding-left:13px}
+.rc ul.b li{font-size:8.9px;line-height:1.38;margin-top:3px;padding-left:13px;word-break:keep-all;overflow-wrap:normal;hyphens:none}
 .rc ul.b li::before{font-size:6.5px}
 .rc ul.b li .kk{font-weight:700;text-transform:uppercase;letter-spacing:.05em;
   font-size:7.9px;margin-right:5px}
 .rc .lnk{display:block;font-size:7.9px;margin-top:4px;text-decoration:none;word-break:break-all}
-
-/* footer */
-.ft{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;
-  justify-content:space-between;align-items:baseline;font-size:7.8px;
-  border-top:var(--rule);padding-top:4px;letter-spacing:.02em}
-.ft .pg{font-weight:700}
 
 @media print{
   html,body{background:#fff}
@@ -145,7 +139,6 @@ ul.b li b{font-weight:700}
   <div class="hd">
     <div class="nm t" data-ko="조진우<small>Jinwoo&nbsp;Cho</small>" data-en="Jinwoo Cho"></div>
     <div class="ct">
-      <span><a href="mailto:jimy12181218@gmail.com">jimy12181218@gmail.com</a></span><span class="sep">|</span>
       <span><a href="https://linkedin.com/in/heyjinwoo" target="_blank" rel="noopener">linkedin.com/in/heyjinwoo</a></span><span class="sep">|</span>
       <span><a href="https://github.com/superjin1218" target="_blank" rel="noopener">github.com/superjin1218</a></span><span class="sep">|</span>
       <span class="t" data-ko="구직 중" data-en="Open to work"></span>
@@ -326,10 +319,6 @@ ul.b li b{font-weight:700}
     </div>
   </div>
 
-  <div class="ft">
-    <span class="t" data-ko="조진우 Jinwoo Cho · CS-Backed Future Financier" data-en="Jinwoo Cho · CS-Backed Future Financier"></span>
-    <span class="pg t" data-ko="1 / 2 페이지" data-en="Page 1 / 2"></span>
-  </div>
 </div>
 
 <!-- ================= PAGE 2 — PROJECTS 01–09 (detail) ================= -->
@@ -457,10 +446,6 @@ ul.b li b{font-weight:700}
     </div>
   </div>
 
-  <div class="ft">
-    <span class="t" data-ko="조진우 Jinwoo Cho · CS-Backed Future Financier" data-en="Jinwoo Cho · CS-Backed Future Financier"></span>
-    <span class="pg t" data-ko="2 / 2 페이지" data-en="Page 2 / 2"></span>
-  </div>
 </div>
 
 <script>
