@@ -490,7 +490,6 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
         </div>
         <div class="cta reveal">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener"><span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
-          <a class="btn btn-ghost pdfdl" href="resume-bcg-bw-ko.pdf" download="Jinwoo_Cho_Resume_KO.pdf" rel="noopener"><span class="t" data-ko="이력서 PDF ↓" data-en="Résumé PDF ↓"></span></a>
           <a class="btn btn-ghost" href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
@@ -532,7 +531,7 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
       <div class="reveal">
         <p class="eyebrow"># <span class="t" data-ko="프로필" data-en="Profile"></span></p>
         <p class="stmt" style="margin-top:22px">
-          <span class="t" data-ko="데이터 수집·분류·분석 파이프라인을 직접 설계하고, BLUENODE 리서치 팀 리드로서 팀의 방향과 산출물 품질을 책임집니다. 복잡한 금융·온체인 현상을 " data-en="I build data collection–classification–analysis pipelines end to end, and as Research Team Lead at BLUENODE I own the team's direction and output quality. My edge is turning complex financial and on-chain phenomena into "></span><span class="gold-text t" data-ko="누구나 실행할 수 있는 결론" data-en="conclusions anyone can act on"></span><span class="t" data-ko="으로 바꾸는 것이 강점입니다." data-en="."></span>
+          <span class="t" data-ko="데이터 수집·분류·분석 파이프라인을 직접 설계합니다. 복잡한 금융·온체인 현상을 " data-en="I build data collection–classification–analysis pipelines end to end. My edge is turning complex financial and on-chain phenomena into "></span><span class="gold-text t" data-ko="누구나 실행할 수 있는 결론" data-en="conclusions anyone can act on"></span><span class="t" data-ko="으로 바꾸는 것이 강점입니다." data-en="."></span>
         </p>
       </div>
       <div class="facts reveal">
@@ -716,8 +715,9 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
       <article class="proj reveal" data-cat="ML FINANCE">
         <div class="top"><span class="no">14</span><span class="cat">DL · FIN</span></div>
         <h3 class="t" data-ko="시그모이드 함수 주가예측 검증" data-en="Sigmoid Stock-Prediction Verification"></h3>
-        <p class="th t" data-ko="시그모이드 기반 주가예측 모델의 유효성을 검증 — 한국디지털컨텐츠학회 하계학술대회 은상." data-en="Validated a sigmoid-based stock-prediction model — Silver, Korea Digital Contents Society Summer Conference."></p>
+        <p class="th t" data-ko="시그모이드 함수로 주가 등락을 예측하는 모델을 직접 구현하고, 실제 주가 데이터로 예측력이 유효한지 검증했습니다 — 한국디지털컨텐츠학회 하계학술대회 은상." data-en="Built a model that predicts price moves with a sigmoid function, then tested whether it actually holds up on real market data — Silver, Korea Digital Contents Society Summer Conference."></p>
         <div class="metric">🥈 Silver · model validation</div>
+        <a class="lk" href="https://drive.google.com/file/d/12H52NK3Oyzn94sWKtxPc4ExEzgu6t9TJ/view?usp=sharing" target="_blank" rel="noopener">Google Drive ↗</a>
       </article>
 
       <article class="proj reveal" data-cat="FINANCE DATA ML">
@@ -953,7 +953,6 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
       <p class="t" data-ko="블록체인·금융·데이터 리서치, 협업, 채용 — 언제든 환영합니다." data-en="Blockchain · finance · data research, collaboration or hiring — always open."></p>
       <div class="cta">
         <a class="btn btn-primary" href="https://www.linkedin.com/in/heyjinwoo/" target="_blank" rel="noopener"><span class="t" data-ko="연락하기" data-en="Get in touch"></span></a>
-        <a class="btn btn-ghost pdfdl" href="resume-bcg-bw-ko.pdf" download="Jinwoo_Cho_Resume_KO.pdf" rel="noopener"><span class="t" data-ko="이력서 PDF ↓" data-en="Résumé PDF ↓"></span></a>
       </div>
       <div class="links">
         <a href="https://github.com/superjin1218" target="_blank" rel="noopener">GitHub ↗</a>
@@ -991,10 +990,6 @@ footer .fin{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
     });
     document.querySelectorAll('.toggle button').forEach(function(b){
       b.setAttribute('aria-pressed', b.dataset.lang===lang ? 'true':'false');
-    });
-    document.querySelectorAll('.pdfdl').forEach(function(a){
-      a.setAttribute('href','resume-bcg-bw-'+lang+'.pdf');
-      a.setAttribute('download','Jinwoo_Cho_Resume_'+lang.toUpperCase()+'.pdf');
     });
   }
   document.querySelectorAll('.toggle button').forEach(function(b){
